@@ -1,0 +1,6 @@
+../Core/UserCC/pid.c:3:6:Set_motor_pwmL	16	static
+../Core/UserCC/pid.c:18:6:Set_motor_pwmR	16	static
+../Core/UserCC/pid.c:33:6:Set_motor_speedL	16	static
+../Core/UserCC/pid.c:40:6:Set_motor_speedR	16	static
+../Core/UserCC/pid.c:50:6:PID_param_init	32	static
+../Core/UserCC/pid.c:66:7:PosionPID_realize	16	static

@@ -1,0 +1,761 @@
+2025-05-30 00:00:12,486 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-30 00:00:12,495 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-30 00:00:12,495 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-30 00:00:12,495 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-30 00:00:17,598 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-30 00:00:22,307 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 934376432 Bytes (1073741824)
+2025-05-30 00:00:22,609 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 958493680 Bytes (1073741824)
+2025-05-30 00:00:23,025 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 995193840 Bytes (1073741824)
+2025-05-30 00:00:23,179 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-05-30 00:00:23,179 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-05-30 00:00:23,179 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-05-30 00:00:23,179 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F1
+2025-05-30 00:00:23,179 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F1
+2025-05-30 00:00:23,179 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-05-30 00:00:23,179 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-05-30 00:00:23,179 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-05-30 00:00:23,179 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-05-30 00:00:23,180 [INFO] CodeGenerator:882 - code generatio: config db path: A:\STM32CUBEIDE\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-05-30 00:00:23,181 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-30 00:00:23,181 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-30 00:00:23,197 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-05-30 00:00:23,197 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:00:23,197 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel5
+2025-05-30 00:00:23,197 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel5
+2025-05-30 00:00:23,197 [INFO] Argument:325 - Argument : Initvalue: null
+2025-05-30 00:00:23,197 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:00:23,198 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-30 00:00:23,198 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-30 00:00:23,198 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:00:23,198 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:00:23,198 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:00:23,198 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:00:23,198 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:00:23,198 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:00:23,198 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:00:23,198 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:00:23,198 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:00:23,198 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:00:23,198 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:00:23,198 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:00:23,198 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-05-30 00:00:23,198 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-05-30 00:00:23,198 [INFO] Argument:325 - Argument : Statevalue: null
+2025-05-30 00:00:23,198 [INFO] Argument:335 - Argument : Statevalue: null
+2025-05-30 00:00:23,198 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-05-30 00:00:23,198 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-05-30 00:00:23,198 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:00:23,198 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:00:23,198 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:00:23,198 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:00:23,198 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:00:23,198 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:00:23,198 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-05-30 00:00:23,198 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel4
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel4
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : Initvalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : Statevalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : Statevalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-05-30 00:00:23,199 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-05-30 00:00:23,248 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\license.tmp_save
+2025-05-30 00:00:23,287 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\license.tmp
+2025-05-30 00:00:23,298 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\gpio.c_save
+2025-05-30 00:00:23,341 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\gpio.c
+2025-05-30 00:00:23,343 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\gpio.h_save
+2025-05-30 00:00:23,384 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\gpio.h
+2025-05-30 00:00:23,467 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\dma.c_save
+2025-05-30 00:00:23,515 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\dma.c
+2025-05-30 00:00:23,518 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\dma.h_save
+2025-05-30 00:00:23,557 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\dma.h
+2025-05-30 00:00:23,563 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\i2c.c_save
+2025-05-30 00:00:23,618 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\i2c.c
+2025-05-30 00:00:23,621 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\i2c.h_save
+2025-05-30 00:00:23,667 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\i2c.h
+2025-05-30 00:00:23,673 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\tim.c_save
+2025-05-30 00:00:23,732 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\tim.c
+2025-05-30 00:00:23,736 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\tim.h_save
+2025-05-30 00:00:23,779 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\tim.h
+2025-05-30 00:00:23,786 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\usart.c_save
+2025-05-30 00:00:23,841 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\usart.c
+2025-05-30 00:00:23,845 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\usart.h_save
+2025-05-30 00:00:23,884 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\usart.h
+2025-05-30 00:00:23,891 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_it.c_save
+2025-05-30 00:00:23,935 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_it.c
+2025-05-30 00:00:23,938 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_it.h_save
+2025-05-30 00:00:23,976 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_it.h
+2025-05-30 00:00:23,982 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_hal_msp.c_save
+2025-05-30 00:00:24,038 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_hal_msp.c
+2025-05-30 00:00:24,040 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\system.tmp_save
+2025-05-30 00:00:24,078 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\system.tmp
+2025-05-30 00:00:24,082 [INFO] CodeEngine:319 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_hal_conf.h_save
+2025-05-30 00:00:24,127 [INFO] CodeEngine:343 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_hal_conf.h
+2025-05-30 00:00:24,140 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\main.h_save
+2025-05-30 00:00:24,186 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\main.h
+2025-05-30 00:00:24,188 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\main.c_save
+2025-05-30 00:00:24,250 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\main.c
+2025-05-30 00:00:24,405 [INFO] ProjectBuilder:3324 - Time for Copy HAL[2] : 3mS.
+2025-05-30 00:00:24,408 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-05-30 00:00:24,492 [INFO] ConfigFileManager:1590 - The Die is : DIE410
+2025-05-30 00:00:25,034 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 626mS.
+2025-05-30 00:00:25,036 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 2mS.
+2025-05-30 00:00:25,038 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-05-30 00:01:05,414 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-30 00:01:23,057 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-30 00:01:29,047 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 918314040 Bytes (1073741824)
+2025-05-30 00:01:29,371 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 942603520 Bytes (1073741824)
+2025-05-30 00:01:29,738 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 979303680 Bytes (1073741824)
+2025-05-30 00:01:29,890 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-05-30 00:01:29,890 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-05-30 00:01:29,890 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-05-30 00:01:29,890 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F1
+2025-05-30 00:01:29,890 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F1
+2025-05-30 00:01:29,890 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-05-30 00:01:29,890 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-05-30 00:01:29,890 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-05-30 00:01:29,890 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-05-30 00:01:29,891 [INFO] CodeGenerator:882 - code generatio: config db path: A:\STM32CUBEIDE\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-05-30 00:01:29,892 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-30 00:01:29,892 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel5
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel5
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : Initvalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : Statevalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : Statevalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-05-30 00:01:29,907 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel4
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel4
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : Initvalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : Statevalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : Statevalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-05-30 00:01:29,908 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-05-30 00:01:29,982 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\license.tmp_save
+2025-05-30 00:01:30,038 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\license.tmp
+2025-05-30 00:01:30,055 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\gpio.c_save
+2025-05-30 00:01:30,120 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\gpio.c
+2025-05-30 00:01:30,123 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\gpio.h_save
+2025-05-30 00:01:30,182 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\gpio.h
+2025-05-30 00:01:30,284 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\dma.c_save
+2025-05-30 00:01:30,340 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\dma.c
+2025-05-30 00:01:30,342 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\dma.h_save
+2025-05-30 00:01:30,384 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\dma.h
+2025-05-30 00:01:30,391 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\i2c.c_save
+2025-05-30 00:01:30,446 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\i2c.c
+2025-05-30 00:01:30,450 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\i2c.h_save
+2025-05-30 00:01:30,489 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\i2c.h
+2025-05-30 00:01:30,494 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\tim.c_save
+2025-05-30 00:01:30,554 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\tim.c
+2025-05-30 00:01:30,557 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\tim.h_save
+2025-05-30 00:01:30,597 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\tim.h
+2025-05-30 00:01:30,602 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\usart.c_save
+2025-05-30 00:01:30,659 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\usart.c
+2025-05-30 00:01:30,662 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\usart.h_save
+2025-05-30 00:01:30,712 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\usart.h
+2025-05-30 00:01:30,719 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_it.c_save
+2025-05-30 00:01:30,762 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_it.c
+2025-05-30 00:01:30,766 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_it.h_save
+2025-05-30 00:01:30,808 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_it.h
+2025-05-30 00:01:30,814 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_hal_msp.c_save
+2025-05-30 00:01:30,871 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_hal_msp.c
+2025-05-30 00:01:30,872 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\system.tmp_save
+2025-05-30 00:01:30,910 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\system.tmp
+2025-05-30 00:01:30,916 [INFO] CodeEngine:319 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_hal_conf.h_save
+2025-05-30 00:01:30,957 [INFO] CodeEngine:343 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_hal_conf.h
+2025-05-30 00:01:30,970 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\main.h_save
+2025-05-30 00:01:31,011 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\main.h
+2025-05-30 00:01:31,014 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\main.c_save
+2025-05-30 00:01:31,072 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\main.c
+2025-05-30 00:01:31,193 [INFO] ProjectBuilder:3324 - Time for Copy HAL[2] : 1mS.
+2025-05-30 00:01:31,195 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-05-30 00:01:31,249 [INFO] ConfigFileManager:1590 - The Die is : DIE410
+2025-05-30 00:01:31,779 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 583mS.
+2025-05-30 00:01:31,780 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-05-30 00:01:31,785 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 2mS.
+2025-05-30 00:02:38,244 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-30 00:02:58,872 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-30 00:03:03,450 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 977909120 Bytes (1073741824)
+2025-05-30 00:03:03,764 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 1001504128 Bytes (1073741824)
+2025-05-30 00:03:04,161 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 812078640 Bytes (1073741824)
+2025-05-30 00:03:04,306 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-05-30 00:03:04,306 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-05-30 00:03:04,306 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-05-30 00:03:04,306 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F1
+2025-05-30 00:03:04,306 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F1
+2025-05-30 00:03:04,306 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-05-30 00:03:04,307 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-05-30 00:03:04,307 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-05-30 00:03:04,307 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-05-30 00:03:04,307 [INFO] CodeGenerator:882 - code generatio: config db path: A:\STM32CUBEIDE\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-05-30 00:03:04,309 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-30 00:03:04,309 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-30 00:03:04,315 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel5
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel5
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : Initvalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : Statevalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : Statevalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel4
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel4
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : Initvalue: null
+2025-05-30 00:03:04,316 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:03:04,316 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:03:04,316 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:03:04,317 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:03:04,317 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:03:04,317 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:03:04,317 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:03:04,317 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:03:04,317 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:03:04,317 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-05-30 00:03:04,317 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-05-30 00:03:04,317 [INFO] Argument:325 - Argument : Statevalue: null
+2025-05-30 00:03:04,317 [INFO] Argument:335 - Argument : Statevalue: null
+2025-05-30 00:03:04,317 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-05-30 00:03:04,317 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-05-30 00:03:04,317 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:03:04,317 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:03:04,317 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:03:04,317 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:03:04,317 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:03:04,317 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:03:04,317 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-05-30 00:03:04,317 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-05-30 00:03:04,360 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\license.tmp_save
+2025-05-30 00:03:04,398 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\license.tmp
+2025-05-30 00:03:04,410 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\gpio.c_save
+2025-05-30 00:03:04,451 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\gpio.c
+2025-05-30 00:03:04,454 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\gpio.h_save
+2025-05-30 00:03:04,492 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\gpio.h
+2025-05-30 00:03:04,571 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\dma.c_save
+2025-05-30 00:03:04,613 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\dma.c
+2025-05-30 00:03:04,616 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\dma.h_save
+2025-05-30 00:03:04,655 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\dma.h
+2025-05-30 00:03:04,661 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\i2c.c_save
+2025-05-30 00:03:04,716 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\i2c.c
+2025-05-30 00:03:04,720 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\i2c.h_save
+2025-05-30 00:03:04,766 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\i2c.h
+2025-05-30 00:03:04,771 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\tim.c_save
+2025-05-30 00:03:04,827 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\tim.c
+2025-05-30 00:03:04,830 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\tim.h_save
+2025-05-30 00:03:04,870 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\tim.h
+2025-05-30 00:03:04,875 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\usart.c_save
+2025-05-30 00:03:04,930 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\usart.c
+2025-05-30 00:03:04,932 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\usart.h_save
+2025-05-30 00:03:04,971 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\usart.h
+2025-05-30 00:03:04,977 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_it.c_save
+2025-05-30 00:03:05,022 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_it.c
+2025-05-30 00:03:05,026 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_it.h_save
+2025-05-30 00:03:05,064 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_it.h
+2025-05-30 00:03:05,071 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_hal_msp.c_save
+2025-05-30 00:03:05,125 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_hal_msp.c
+2025-05-30 00:03:05,127 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\system.tmp_save
+2025-05-30 00:03:05,165 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\system.tmp
+2025-05-30 00:03:05,170 [INFO] CodeEngine:319 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_hal_conf.h_save
+2025-05-30 00:03:05,213 [INFO] CodeEngine:343 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_hal_conf.h
+2025-05-30 00:03:05,225 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\main.h_save
+2025-05-30 00:03:05,265 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\main.h
+2025-05-30 00:03:05,268 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\main.c_save
+2025-05-30 00:03:05,324 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\main.c
+2025-05-30 00:03:05,462 [INFO] ProjectBuilder:3324 - Time for Copy HAL[2] : 1mS.
+2025-05-30 00:03:05,464 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-05-30 00:03:05,525 [INFO] ConfigFileManager:1590 - The Die is : DIE410
+2025-05-30 00:03:06,044 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 580mS.
+2025-05-30 00:03:06,045 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-05-30 00:03:06,048 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-05-30 00:07:03,632 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-30 00:08:05,510 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-30 00:08:08,624 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 985231744 Bytes (1073741824)
+2025-05-30 00:08:08,685 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 1002495720 Bytes (1073741824)
+2025-05-30 00:08:09,137 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 835215296 Bytes (1073741824)
+2025-05-30 00:08:09,307 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-05-30 00:08:09,307 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-05-30 00:08:09,307 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-05-30 00:08:09,307 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F1
+2025-05-30 00:08:09,307 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-05-30 00:08:09,307 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-05-30 00:08:09,307 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-05-30 00:08:09,307 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-05-30 00:08:09,308 [INFO] CodeGenerator:882 - code generatio: config db path: A:\STM32CUBEIDE\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-05-30 00:08:09,310 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-30 00:08:09,310 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel5
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel5
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : Initvalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : Statevalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : Statevalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-05-30 00:08:09,316 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-05-30 00:08:09,317 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-05-30 00:08:09,317 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:08:09,317 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel4
+2025-05-30 00:08:09,317 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel4
+2025-05-30 00:08:09,317 [INFO] Argument:325 - Argument : Initvalue: null
+2025-05-30 00:08:09,317 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:08:09,317 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-05-30 00:08:09,317 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-05-30 00:08:09,317 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:08:09,317 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:08:09,317 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:08:09,317 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:08:09,317 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:08:09,317 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:08:09,317 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:08:09,317 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:08:09,317 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:08:09,317 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:08:09,317 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:08:09,317 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:08:09,318 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-05-30 00:08:09,318 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-05-30 00:08:09,318 [INFO] Argument:325 - Argument : Statevalue: null
+2025-05-30 00:08:09,318 [INFO] Argument:335 - Argument : Statevalue: null
+2025-05-30 00:08:09,318 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-05-30 00:08:09,318 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-05-30 00:08:09,318 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:08:09,318 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:08:09,318 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:08:09,318 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:08:09,318 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:08:09,318 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:08:09,318 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-05-30 00:08:09,318 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-05-30 00:08:09,368 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\license.tmp_save
+2025-05-30 00:08:09,430 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\license.tmp
+2025-05-30 00:08:09,442 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\gpio.c_save
+2025-05-30 00:08:09,492 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\gpio.c
+2025-05-30 00:08:09,495 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\gpio.h_save
+2025-05-30 00:08:09,536 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\gpio.h
+2025-05-30 00:08:09,617 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\dma.c_save
+2025-05-30 00:08:09,661 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\dma.c
+2025-05-30 00:08:09,665 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\dma.h_save
+2025-05-30 00:08:09,708 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\dma.h
+2025-05-30 00:08:09,715 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\i2c.c_save
+2025-05-30 00:08:09,792 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\i2c.c
+2025-05-30 00:08:09,796 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\i2c.h_save
+2025-05-30 00:08:09,840 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\i2c.h
+2025-05-30 00:08:09,847 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\tim.c_save
+2025-05-30 00:08:09,907 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\tim.c
+2025-05-30 00:08:09,910 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\tim.h_save
+2025-05-30 00:08:09,952 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\tim.h
+2025-05-30 00:08:09,960 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\usart.c_save
+2025-05-30 00:08:10,021 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\usart.c
+2025-05-30 00:08:10,024 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\usart.h_save
+2025-05-30 00:08:10,067 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\usart.h
+2025-05-30 00:08:10,074 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_it.c_save
+2025-05-30 00:08:10,190 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_it.c
+2025-05-30 00:08:10,192 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_it.h_save
+2025-05-30 00:08:10,256 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_it.h
+2025-05-30 00:08:10,264 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_hal_msp.c_save
+2025-05-30 00:08:10,340 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_hal_msp.c
+2025-05-30 00:08:10,342 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\system.tmp_save
+2025-05-30 00:08:10,392 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\system.tmp
+2025-05-30 00:08:10,400 [INFO] CodeEngine:319 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_hal_conf.h_save
+2025-05-30 00:08:10,462 [INFO] CodeEngine:343 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_hal_conf.h
+2025-05-30 00:08:10,476 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\main.h_save
+2025-05-30 00:08:10,557 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\main.h
+2025-05-30 00:08:10,560 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\main.c_save
+2025-05-30 00:08:10,644 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\main.c
+2025-05-30 00:08:10,772 [INFO] ProjectBuilder:3324 - Time for Copy HAL[2] : 3mS.
+2025-05-30 00:08:10,774 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-05-30 00:08:10,834 [INFO] ConfigFileManager:1590 - The Die is : DIE410
+2025-05-30 00:08:11,519 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 744mS.
+2025-05-30 00:08:11,521 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 2mS.
+2025-05-30 00:08:11,525 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-05-30 00:08:42,611 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-30 00:08:47,889 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-30 00:08:54,643 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 952500688 Bytes (1073741824)
+2025-05-30 00:08:54,982 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 976617936 Bytes (1073741824)
+2025-05-30 00:08:55,400 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 1012795856 Bytes (1073741824)
+2025-05-30 00:08:55,579 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-05-30 00:08:55,579 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-05-30 00:08:55,579 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-05-30 00:08:55,579 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F1
+2025-05-30 00:08:55,579 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-05-30 00:08:55,580 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-05-30 00:08:55,580 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-05-30 00:08:55,580 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-05-30 00:08:55,580 [INFO] CodeGenerator:882 - code generatio: config db path: A:\STM32CUBEIDE\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-05-30 00:08:55,581 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-30 00:08:55,581 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel5
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel5
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : Initvalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : Statevalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : Statevalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-05-30 00:08:55,585 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel4
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel4
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : Initvalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : Statevalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : Statevalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-05-30 00:08:55,587 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-05-30 00:08:55,639 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\license.tmp_save
+2025-05-30 00:08:55,680 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\license.tmp
+2025-05-30 00:08:55,692 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\gpio.c_save
+2025-05-30 00:08:55,737 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\gpio.c
+2025-05-30 00:08:55,739 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\gpio.h_save
+2025-05-30 00:08:55,780 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\gpio.h
+2025-05-30 00:08:55,852 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\dma.c_save
+2025-05-30 00:08:55,898 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\dma.c
+2025-05-30 00:08:55,901 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\dma.h_save
+2025-05-30 00:08:55,947 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\dma.h
+2025-05-30 00:08:55,954 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\i2c.c_save
+2025-05-30 00:08:56,011 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\i2c.c
+2025-05-30 00:08:56,014 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\i2c.h_save
+2025-05-30 00:08:56,056 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\i2c.h
+2025-05-30 00:08:56,062 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\tim.c_save
+2025-05-30 00:08:56,129 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\tim.c
+2025-05-30 00:08:56,132 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\tim.h_save
+2025-05-30 00:08:56,172 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\tim.h
+2025-05-30 00:08:56,179 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\usart.c_save
+2025-05-30 00:08:56,239 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\usart.c
+2025-05-30 00:08:56,241 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\usart.h_save
+2025-05-30 00:08:56,285 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\usart.h
+2025-05-30 00:08:56,292 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_it.c_save
+2025-05-30 00:08:56,342 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_it.c
+2025-05-30 00:08:56,346 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_it.h_save
+2025-05-30 00:08:56,387 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_it.h
+2025-05-30 00:08:56,394 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_hal_msp.c_save
+2025-05-30 00:08:56,456 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_hal_msp.c
+2025-05-30 00:08:56,458 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\system.tmp_save
+2025-05-30 00:08:56,504 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\system.tmp
+2025-05-30 00:08:56,509 [INFO] CodeEngine:319 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_hal_conf.h_save
+2025-05-30 00:08:56,557 [INFO] CodeEngine:343 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_hal_conf.h
+2025-05-30 00:08:56,569 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\main.h_save
+2025-05-30 00:08:56,613 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\main.h
+2025-05-30 00:08:56,615 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\main.c_save
+2025-05-30 00:08:56,675 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\main.c
+2025-05-30 00:08:56,846 [INFO] ProjectBuilder:3324 - Time for Copy HAL[2] : 3mS.
+2025-05-30 00:08:56,848 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-05-30 00:08:56,914 [INFO] ConfigFileManager:1590 - The Die is : DIE410
+2025-05-30 00:08:57,499 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 651mS.
+2025-05-30 00:08:57,501 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 2mS.
+2025-05-30 00:08:57,505 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-05-30 00:09:08,390 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-30 00:09:18,719 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 853604360 Bytes (1073741824)
+2025-05-30 00:09:18,779 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 874794768 Bytes (1073741824)
+2025-05-30 00:09:18,901 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 894498824 Bytes (1073741824)
+2025-05-30 00:09:19,010 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-05-30 00:09:19,010 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-05-30 00:09:19,010 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-05-30 00:09:19,010 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F1
+2025-05-30 00:09:19,010 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-05-30 00:09:19,011 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-05-30 00:09:19,011 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-05-30 00:09:19,011 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-05-30 00:09:19,011 [INFO] CodeGenerator:882 - code generatio: config db path: A:\STM32CUBEIDE\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-05-30 00:09:19,012 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-30 00:09:19,012 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-30 00:09:19,017 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-05-30 00:09:19,017 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:09:19,017 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel5
+2025-05-30 00:09:19,017 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel5
+2025-05-30 00:09:19,017 [INFO] Argument:325 - Argument : Initvalue: null
+2025-05-30 00:09:19,017 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:09:19,017 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-30 00:09:19,017 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-30 00:09:19,017 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:09:19,017 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:09:19,017 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:09:19,017 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:09:19,017 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:09:19,017 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:09:19,017 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:09:19,017 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:09:19,017 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:09:19,017 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:09:19,017 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:09:19,017 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:09:19,017 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-05-30 00:09:19,017 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-05-30 00:09:19,017 [INFO] Argument:325 - Argument : Statevalue: null
+2025-05-30 00:09:19,017 [INFO] Argument:335 - Argument : Statevalue: null
+2025-05-30 00:09:19,017 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-05-30 00:09:19,017 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel4
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel4
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : Initvalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:327 - 	 sub Args: 
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : Statevalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : Statevalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-05-30 00:09:19,018 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-05-30 00:09:19,019 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:09:19,019 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-05-30 00:09:19,019 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:09:19,019 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-30 00:09:19,019 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:09:19,019 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-05-30 00:09:19,019 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-05-30 00:09:19,019 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-05-30 00:09:19,070 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\license.tmp_save
+2025-05-30 00:09:19,115 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\license.tmp
+2025-05-30 00:09:19,127 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\gpio.c_save
+2025-05-30 00:09:19,173 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\gpio.c
+2025-05-30 00:09:19,177 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\gpio.h_save
+2025-05-30 00:09:19,219 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\gpio.h
+2025-05-30 00:09:19,306 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\dma.c_save
+2025-05-30 00:09:19,352 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\dma.c
+2025-05-30 00:09:19,355 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\dma.h_save
+2025-05-30 00:09:19,398 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\dma.h
+2025-05-30 00:09:19,404 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\i2c.c_save
+2025-05-30 00:09:19,462 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\i2c.c
+2025-05-30 00:09:19,463 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\i2c.h_save
+2025-05-30 00:09:19,505 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\i2c.h
+2025-05-30 00:09:19,512 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\tim.c_save
+2025-05-30 00:09:19,573 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\tim.c
+2025-05-30 00:09:19,576 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\tim.h_save
+2025-05-30 00:09:19,618 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\tim.h
+2025-05-30 00:09:19,624 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\usart.c_save
+2025-05-30 00:09:19,684 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\usart.c
+2025-05-30 00:09:19,686 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\usart.h_save
+2025-05-30 00:09:19,731 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\usart.h
+2025-05-30 00:09:19,737 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_it.c_save
+2025-05-30 00:09:19,791 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_it.c
+2025-05-30 00:09:19,795 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_it.h_save
+2025-05-30 00:09:19,837 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_it.h
+2025-05-30 00:09:19,846 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_hal_msp.c_save
+2025-05-30 00:09:19,906 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_hal_msp.c
+2025-05-30 00:09:19,909 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\system.tmp_save
+2025-05-30 00:09:19,948 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\system.tmp
+2025-05-30 00:09:19,954 [INFO] CodeEngine:319 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_hal_conf.h_save
+2025-05-30 00:09:20,002 [INFO] CodeEngine:343 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_hal_conf.h
+2025-05-30 00:09:20,013 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\main.h_save
+2025-05-30 00:09:20,057 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\main.h
+2025-05-30 00:09:20,061 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\main.c_save
+2025-05-30 00:09:20,121 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\main.c
+2025-05-30 00:09:20,305 [INFO] ProjectBuilder:3324 - Time for Copy HAL[2] : 3mS.
+2025-05-30 00:09:20,307 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-05-30 00:09:20,379 [INFO] ConfigFileManager:1590 - The Die is : DIE410
+2025-05-30 00:09:20,948 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 641mS.
+2025-05-30 00:09:20,950 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 2mS.
+2025-05-30 00:09:20,953 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.

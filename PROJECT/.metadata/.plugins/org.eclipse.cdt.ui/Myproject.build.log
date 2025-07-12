@@ -1,0 +1,11 @@
+19:36:05 **** 构建 of configuration Debug for project Myproject ****
+make -j12 all 
+arm-none-eabi-size  Myproject.elf 
+   text	   data	    bss	    dec	    hex	filename
+  44020	    468	   4132	  48620	   bdec	Myproject.elf
+已结束构建： default.size.stdout
+ 
+命令被取消
+
+19:36:06 Build Cancelled. (took 816ms)
+

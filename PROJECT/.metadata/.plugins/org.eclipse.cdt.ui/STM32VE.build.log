@@ -1,0 +1,10 @@
+23:39:09 **** Incremental Build of configuration Debug for project STM32VE ****
+make -j12 all 
+arm-none-eabi-size  STM32VE.elf 
+   text	   data	    bss	    dec	    hex	filename
+  39604	    468	   2812	  42884	   a784	STM32VE.elf
+已结束构建： default.size.stdout
+ 
+
+23:39:09 Build Finished. 0 errors, 0 warnings. (took 560ms)
+

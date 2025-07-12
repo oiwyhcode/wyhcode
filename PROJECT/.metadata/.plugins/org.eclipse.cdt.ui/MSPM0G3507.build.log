@@ -1,0 +1,9 @@
+12:28:59 **** 仅清理的构建 of configuration Debug for project MSPM0G3507 ****
+make clean 
+无法运行程序“make”：Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[A:/STM32CUBEIDE/STM32CubeIDE_1.18.0/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_3.4.0.202409160955/jre/bin/server;A:/STM32CUBEIDE/STM32CubeIDE_1.18.0/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_3.4.0.202409160955/jre/bin;C:\Program Files\Common Files\Siemens\Automation\Simatic OAM\bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;A:\matlab\runtime\win64;A:\matlab\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;A:\python\Scripts\;A:\python\;C:\Users\14931\AppData\Local\Programs\Python\Launcher\;C:\Users\14931\AppData\Local\Microsoft\WindowsApps;A:\Microsoft VS Code\bin;;A:\STM32CUBEIDE\PROJECT\Myproject;]
+
+12:28:59 Build Failed. 1 errors, 0 warnings. (took 73ms)
+

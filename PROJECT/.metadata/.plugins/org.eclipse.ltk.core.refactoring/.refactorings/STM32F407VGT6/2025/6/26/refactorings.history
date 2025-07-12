@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="将资源“STM32F407VGT6/Core/UserHH/global.h”重命名为“define.h”" description="重命名资源“global.h”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/UserHH/global.h" name="define.h" stamp="1750726723868" updateReferences="true"/>&#x0A;<refactoring comment="将资源“STM32F407VGT6/Core/UserCC/global.c”重命名为“define.c”" description="重命名资源“global.c”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/UserCC/global.c" name="define.c" stamp="1750726730951" updateReferences="true"/>
+</session>

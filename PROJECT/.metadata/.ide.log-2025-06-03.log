@@ -1,0 +1,68 @@
+2025-06-04 00:03:58,468 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-06-04 00:03:59,179 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 865863400 Bytes (1073741824)
+2025-06-04 00:03:59,273 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 881090344 Bytes (1073741824)
+2025-06-04 00:03:59,772 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 958041168 Bytes (1073741824)
+2025-06-04 00:03:59,946 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-06-04 00:03:59,948 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-06-04 00:03:59,948 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-06-04 00:03:59,948 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F1
+2025-06-04 00:03:59,948 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F1
+2025-06-04 00:03:59,948 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8F1
+2025-06-04 00:03:59,948 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-06-04 00:03:59,949 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-06-04 00:03:59,949 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-06-04 00:03:59,949 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-06-04 00:03:59,950 [INFO] CodeGenerator:882 - code generatio: config db path: A:\STM32CUBEIDE\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-06-04 00:03:59,953 [WARN] IP:2250 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-06-04 00:03:59,953 [WARN] IP:2250 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-06-04 00:04:00,070 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\license.tmp_save
+2025-06-04 00:04:00,364 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\license.tmp
+2025-06-04 00:04:00,437 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\gpio.c_save
+2025-06-04 00:04:00,593 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\gpio.c
+2025-06-04 00:04:00,597 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\gpio.h_save
+2025-06-04 00:04:00,691 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\gpio.h
+2025-06-04 00:04:00,889 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\dma.c_save
+2025-06-04 00:04:00,985 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\dma.c
+2025-06-04 00:04:00,989 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\dma.h_save
+2025-06-04 00:04:01,069 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\dma.h
+2025-06-04 00:04:01,079 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\i2c.c_save
+2025-06-04 00:04:01,253 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\i2c.c
+2025-06-04 00:04:01,256 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\i2c.h_save
+2025-06-04 00:04:01,345 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\i2c.h
+2025-06-04 00:04:01,353 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\tim.c_save
+2025-06-04 00:04:01,503 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\tim.c
+2025-06-04 00:04:01,507 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\tim.h_save
+2025-06-04 00:04:01,573 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\tim.h
+2025-06-04 00:04:01,580 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\usart.c_save
+2025-06-04 00:04:01,676 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\usart.c
+2025-06-04 00:04:01,682 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\usart.h_save
+2025-06-04 00:04:01,741 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\usart.h
+2025-06-04 00:04:01,752 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_it.c_save
+2025-06-04 00:04:01,901 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_it.c
+2025-06-04 00:04:01,906 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_it.h_save
+2025-06-04 00:04:01,974 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_it.h
+2025-06-04 00:04:01,988 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_hal_msp.c_save
+2025-06-04 00:04:02,094 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\stm32f1xx_hal_msp.c
+2025-06-04 00:04:02,098 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\system.tmp_save
+2025-06-04 00:04:02,153 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\MXTmpFiles\system.tmp
+2025-06-04 00:04:02,163 [INFO] CodeEngine:319 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_hal_conf.h_save
+2025-06-04 00:04:02,237 [INFO] CodeEngine:343 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\stm32f1xx_hal_conf.h
+2025-06-04 00:04:02,262 [INFO] ApiDbMcu:508 - Load IP Config File for I2C1
+2025-06-04 00:04:02,275 [INFO] ApiDbMcu:508 - Load IP Config File for TIM2
+2025-06-04 00:04:02,287 [INFO] ApiDbMcu:508 - Load IP Config File for TIM3
+2025-06-04 00:04:02,299 [INFO] ApiDbMcu:508 - Load IP Config File for TIM4
+2025-06-04 00:04:02,305 [INFO] ApiDbMcu:508 - Load IP Config File for USART1
+2025-06-04 00:04:02,307 [INFO] ApiDbMcu:508 - Load IP Config File for RCC
+2025-06-04 00:04:02,315 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\main.h_save
+2025-06-04 00:04:02,438 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Inc\main.h
+2025-06-04 00:04:02,445 [INFO] CodeEngine:263 - oldGeneratedFile, A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\main.c_save
+2025-06-04 00:04:02,543 [INFO] CodeEngine:287 - Generated code: A:\STM32CUBEIDE\PROJECT\Myproject\Core\Src\main.c
+2025-06-04 00:04:02,715 [INFO] ProjectBuilder:3324 - Time for Copy HAL[2] : 2mS.
+2025-06-04 00:04:02,720 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-06-04 00:04:02,786 [INFO] ConfigFileManager:1590 - The Die is : DIE410
+2025-06-04 00:04:02,788 [INFO] ApiDbMcu:508 - Load IP Config File for FATFS
+2025-06-04 00:04:02,791 [INFO] ApiDbMcu:508 - Load IP Config File for FREERTOS
+2025-06-04 00:04:02,794 [INFO] ApiDbMcu:508 - Load IP Config File for USB_DEVICE
+2025-06-04 00:04:03,546 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 826mS.
+2025-06-04 00:04:03,549 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 3mS.
+2025-06-04 00:04:03,553 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 2mS.
