@@ -5,25 +5,28 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/UserCC/Trace_PID.c \
 ../Core/UserCC/define.c \
 ../Core/UserCC/font.c \
 ../Core/UserCC/jy62.c \
 ../Core/UserCC/oled.c \
-../Core/UserCC/pid.c 
+../Core/UserCC/pidspeed.c 
 
 OBJS += \
+./Core/UserCC/Trace_PID.o \
 ./Core/UserCC/define.o \
 ./Core/UserCC/font.o \
 ./Core/UserCC/jy62.o \
 ./Core/UserCC/oled.o \
-./Core/UserCC/pid.o 
+./Core/UserCC/pidspeed.o 
 
 C_DEPS += \
+./Core/UserCC/Trace_PID.d \
 ./Core/UserCC/define.d \
 ./Core/UserCC/font.d \
 ./Core/UserCC/jy62.d \
 ./Core/UserCC/oled.d \
-./Core/UserCC/pid.d 
+./Core/UserCC/pidspeed.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -33,7 +36,7 @@ Core/UserCC/%.o Core/UserCC/%.su Core/UserCC/%.cyclo: ../Core/UserCC/%.c Core/Us
 clean: clean-Core-2f-UserCC
 
 clean-Core-2f-UserCC:
-	-$(RM) ./Core/UserCC/define.cyclo ./Core/UserCC/define.d ./Core/UserCC/define.o ./Core/UserCC/define.su ./Core/UserCC/font.cyclo ./Core/UserCC/font.d ./Core/UserCC/font.o ./Core/UserCC/font.su ./Core/UserCC/jy62.cyclo ./Core/UserCC/jy62.d ./Core/UserCC/jy62.o ./Core/UserCC/jy62.su ./Core/UserCC/oled.cyclo ./Core/UserCC/oled.d ./Core/UserCC/oled.o ./Core/UserCC/oled.su ./Core/UserCC/pid.cyclo ./Core/UserCC/pid.d ./Core/UserCC/pid.o ./Core/UserCC/pid.su
+	-$(RM) ./Core/UserCC/Trace_PID.cyclo ./Core/UserCC/Trace_PID.d ./Core/UserCC/Trace_PID.o ./Core/UserCC/Trace_PID.su ./Core/UserCC/define.cyclo ./Core/UserCC/define.d ./Core/UserCC/define.o ./Core/UserCC/define.su ./Core/UserCC/font.cyclo ./Core/UserCC/font.d ./Core/UserCC/font.o ./Core/UserCC/font.su ./Core/UserCC/jy62.cyclo ./Core/UserCC/jy62.d ./Core/UserCC/jy62.o ./Core/UserCC/jy62.su ./Core/UserCC/oled.cyclo ./Core/UserCC/oled.d ./Core/UserCC/oled.o ./Core/UserCC/oled.su ./Core/UserCC/pidspeed.cyclo ./Core/UserCC/pidspeed.d ./Core/UserCC/pidspeed.o ./Core/UserCC/pidspeed.su
 
 .PHONY: clean-Core-2f-UserCC
 

@@ -1,0 +1,53 @@
+#include "Trace_PID.h"
+uint8_t Read_GPIO(GPIO_TypeDef* port, uint16_t pin) {
+    return (HAL_GPIO_ReadPin(port, pin) == GPIO_PIN_SET) ? 1 : 0;
+}
+
+
+
+uint8_t out5,out4,out3,out2,out1;
+
+uint8_t state[5]={};
+
+void PID_Trace_init(PID_Trace *pid,float target_val,float Kp,float Ki,float Kd)
+{
+	pid->target_val=target_val;
+	pid->Kp = Kp;
+	pid->Ki = Ki;
+	pid->Kd = Kd;
+
+
+}
+
+
+float Trace_error(void){
+	out5 = Read_GPIO(GPIOE, out5_Pin);
+	out4 = Read_GPIO(GPIOE, out5_Pin);
+	out3 = Read_GPIO(GPIOE, out5_Pin);
+	out2 = Read_GPIO(GPIOE, out5_Pin);
+	out1 = Read_GPIO(GPIOE, out5_Pin);
+	float Error=(-2*out5)+(-1*out4)+(0*out3)+(1*out2)+(2*out1);
+    return Error;
+}
+
+void PID_Trace_realize(PID_Trace *pid, float CurrentValue) {
+    // 1. 计算当前误差
+    pid->Error = pid->target_val - CurrentValue;
+
+    // 2. 计算积分项 (带积分限幅，防止积分饱和)
+    pid->Integral += pid->Error;
+    if (pid->Integral > 500) pid->Integral = 500;
+    if (pid->Integral < -500) pid->Integral = -500;
+
+    // 3. 计算微分项
+    float derivative = pid->Error - pid->LastError;
+
+    // 4. 计算总输出
+    pid->output_val = (pid->Kp * pid->Error) +
+                  (pid->Ki * pid->Integral) +
+                  (pid->Kd * derivative);
+
+    // 5. 更新上次误差
+    pid->LastError = pid->Error;
+}
+

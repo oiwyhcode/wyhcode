@@ -1,0 +1,32 @@
+#ifndef MYCODE_PID_H_
+#define MYCODE_PID_H_
+#include "main.h"
+typedef struct
+{
+	float target_val;   //目标值
+	float Error;          /*第 k 次偏差 */
+	float LastError;     /* Error[-1],第 k-1 次偏差 */
+	float PrevError;    /* Error[-2],第 k-2 次偏差 */
+	float Kp,Ki,Kd;     //比例、积分、微分系数
+	float integral;     //积分值
+	float output_val;   //输出值
+}PID;
+
+
+extern float PIDL_Kp;
+extern float PIDL_Ki;
+extern float PIDL_Kd;
+extern float PIDR_Kp;
+extern float PIDR_Ki;
+extern float PIDR_Kd;
+extern int speednow;
+extern int speednow2;
+extern TIM_HandleTypeDef htim12;
+
+
+void PID_param_init(PID *pid,float target_val,float Kp,float Ki,float Kd);
+void Set_motor_speedL(PID *pid,float speed);
+void Set_motor_speedR(PID *pid,float speed);
+float PosionPID_realize(PID *pid, float actual_val);
+
+#endif /* MYCODE_PID_H_ */

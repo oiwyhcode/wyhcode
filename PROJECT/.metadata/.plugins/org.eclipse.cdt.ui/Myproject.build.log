@@ -1,11 +1,16 @@
-19:36:05 **** 构建 of configuration Debug for project Myproject ****
+22:10:38 **** Incremental Build of configuration Debug for project Myproject ****
 make -j12 all 
+arm-none-eabi-gcc -o "Myproject.elf" @"objects.list"   -mcpu=cortex-m3 -T"A:\git\WYHCODE\PROJECT\Myproject\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Myproject.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： Myproject.elf
+ 
 arm-none-eabi-size  Myproject.elf 
+arm-none-eabi-objdump -h -S Myproject.elf  > "Myproject.list"
    text	   data	    bss	    dec	    hex	filename
   44020	    468	   4132	  48620	   bdec	Myproject.elf
 已结束构建： default.size.stdout
  
-命令被取消
+已结束构建： Myproject.list
+ 
 
-19:36:06 Build Cancelled. (took 816ms)
+22:10:40 Build Finished. 0 errors, 0 warnings. (took 1s.823ms)
 

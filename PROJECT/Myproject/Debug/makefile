@@ -61,8 +61,8 @@ all: main-build
 main-build: Myproject.elf secondary-outputs
 
 # 工具调用
-Myproject.elf Myproject.map: $(OBJS) $(USER_OBJS) A:\STM32CUBEIDE\PROJECT\Myproject\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Myproject.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"A:\STM32CUBEIDE\PROJECT\Myproject\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Myproject.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Myproject.elf Myproject.map: $(OBJS) $(USER_OBJS) A:\git\WYHCODE\PROJECT\Myproject\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Myproject.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"A:\git\WYHCODE\PROJECT\Myproject\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Myproject.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo '已结束构建目标： $@'
 	@echo ' '
 
