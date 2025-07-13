@@ -7,7 +7,7 @@ uint8_t Read_GPIO(GPIO_TypeDef* port, uint16_t pin) {
 
 uint8_t out5,out4,out3,out2,out1=0;
 
-uint8_t state[5]={};
+
 
 void PID_Trace_init(PID_Trace *pid,float target_val,float Kp,float Ki,float Kd)
 {
@@ -21,11 +21,11 @@ void PID_Trace_init(PID_Trace *pid,float target_val,float Kp,float Ki,float Kd)
 
 
 float Trace_error(void) {
-    out5 = Read_GPIO(GPIOE, out5_Pin);
-    out4 = Read_GPIO(GPIOE, out4_Pin);
-    out3 = Read_GPIO(GPIOE, out3_Pin);
-    out2 = Read_GPIO(GPIOE, out2_Pin);
-    out1 = Read_GPIO(GPIOE, out1_Pin);
+//    out5 = Read_GPIO(GPIOE, out5_Pin);
+//    out4 = Read_GPIO(GPIOE, out4_Pin);
+//    out3 = Read_GPIO(GPIOE, out3_Pin);
+//    out2 = Read_GPIO(GPIOE, out2_Pin);
+//    out1 = Read_GPIO(GPIOE, out1_Pin);
 
     float Error = (-2.0f * out5) + (-1.0f * out4) + (0.0f * out3) + (1.0f * out2) + (2.0f * out1);
     return Error;
@@ -49,7 +49,8 @@ void PID_Trace_realize(PID_Trace *pid, float CurrentValue) {
     pid->output_val = (pid->Kp * pid->Error) +
                   (pid->Ki * pid->Integral) +
                   (pid->Kd * derivative);
-
+    if (pid->output_val > 500) pid->output_val = 500;
+    if (pid->output_val < -500) pid->output_val = -500;
     // 5. 更新上次误差
     pid->LastError = pid->Error;
 }

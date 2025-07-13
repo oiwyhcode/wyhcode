@@ -33,6 +33,7 @@
 #include "oled.h"
 #include "pidspeed.h"
 #include "Trace_PID.h"
+#include "Angle_PID.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -62,11 +63,13 @@ float PIDR_Kd=1.2;
 float Trace_PID_Kp=0;
 float Trace_PID_Ki=0;
 float Trace_PID_Kd=0;
+float Angle_PID_Kp=0;
+float Angle_PID_Ki=0;
+float Angle_PID_Kd=0;
 	PID PIDL;
 	PID PIDR;
 	PID_Trace Trace_PID;
-
-uint8_t ceshi[255];
+    PID_Angle Angle_PID;
 
 char message[255];
 char RxBuffer[RXBUFFERSIZE];   //接受数据
@@ -104,7 +107,7 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
 Trace_PID.target_val=0;
-
+Angle_PID.target_val=0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -141,7 +144,7 @@ Trace_PID.target_val=0;
   PID_Trace_init(&Trace_PID,Trace_PID.target_val,Trace_PID_Kp,Trace_PID_Ki,Trace_PID_Kd);
   PID_param_init(&PIDL,PIDL.target_val,PIDR_Kp,PIDR_Ki,PIDR_Kd);
   PID_param_init(&PIDR,PIDR.target_val,PIDR_Kp,PIDR_Ki,PIDR_Kd);
-
+  PID_Angle_init(&Angle_PID, Angle_PID.target_val, Angle_PID_Kp, Angle_PID_Ki, Angle_PID_Kd);
 
   /*USER Init END*/
   HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t *)RxBuffer,sizeof(RxBuffer));   //开启接受不定长
@@ -318,8 +321,6 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {//处理数据发送完
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim==&htim7){
-
-
 		speednow=10*(short)__HAL_TIM_GetCounter(&htim5);
 		__HAL_TIM_SetCounter(&htim5,0);
         distance+=speednow/10;
@@ -329,9 +330,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
         distance2+=(speednow2)/10;
 
         PID_Trace_realize(&Trace_PID, Trace_error());
-        Set_motor_speedL(&PIDL,PIDL.target_val-Trace_PID.output_val);
-        Set_motor_speedR(&PIDR,PIDR.target_val+Trace_PID.output_val);
-
+        PID_Angle_realize(&Angle_PID,YawZ);
+        Set_motor_speedL(&PIDL,PIDL.target_val-Trace_PID.output_val-Angle_PID.output_val);
+        Set_motor_speedR(&PIDR,PIDR.target_val+Trace_PID.output_val+Angle_PID.output_val);
+//偏左正输出负  偏右负
 	}
 
 

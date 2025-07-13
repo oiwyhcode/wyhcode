@@ -10,6 +10,7 @@
 "./Core/Src/tim.o"
 "./Core/Src/usart.o"
 "./Core/Startup/startup_stm32f407vgtx.o"
+"./Core/UserCC/Angle_PID.o"
 "./Core/UserCC/Trace_PID.o"
 "./Core/UserCC/define.o"
 "./Core/UserCC/font.o"

@@ -17,7 +17,6 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-
 #include "main.h"
 #include "dma.h"
 #include "i2c.h"
@@ -33,6 +32,8 @@
 #include "jy62.h"
 #include "oled.h"
 #include "pidspeed.h"
+#include "Trace_PID.h"
+#include "Angle_PID.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,9 +60,16 @@ float PIDL_Kd=1.2;
 float PIDR_Kp=3.4;
 float PIDR_Ki=2.4;
 float PIDR_Kd=1.2;
+float Trace_PID_Kp=0;
+float Trace_PID_Ki=0;
+float Trace_PID_Kd=0;
+float Angle_PID_Kp=3;
+float Angle_PID_Ki=0;
+float Angle_PID_Kd=0;
 	PID PIDL;
 	PID PIDR;
-uint8_t ceshi[255];
+	PID_Trace Trace_PID;
+    PID_Angle Angle_PID;
 
 char message[255];
 char RxBuffer[RXBUFFERSIZE];   //接受数据
@@ -71,8 +79,6 @@ float RollX = 0;        //        滚转角
 float PitchY = 0;        //        仰俯角
 float YawZ = 0;        //       偏航角
 int distance, speednow,pwm,distance2,speednow2,pwm2;
-
-
 
 uint8_t JY62_z_Zero[] = {0xFF, 0xAA, 0x52};    //数组来存储发送的z轴角度归零的数据
 
@@ -100,8 +106,8 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
-
+Trace_PID.target_val=0;
+Angle_PID.target_val=20;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -135,8 +141,10 @@ int main(void)
   /*USER Init BEGIN*/
   HAL_Delay(20);
   OLED_Init();
-
-
+  PID_Trace_init(&Trace_PID,Trace_PID.target_val,Trace_PID_Kp,Trace_PID_Ki,Trace_PID_Kd);
+  PID_param_init(&PIDL,PIDL.target_val,PIDR_Kp,PIDR_Ki,PIDR_Kd);
+  PID_param_init(&PIDR,PIDR.target_val,PIDR_Kp,PIDR_Ki,PIDR_Kd);
+  PID_Angle_init(&Angle_PID, Angle_PID.target_val, Angle_PID_Kp, Angle_PID_Ki, Angle_PID_Kd);
 
   /*USER Init END*/
   HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t *)RxBuffer,sizeof(RxBuffer));   //开启接受不定长
@@ -156,10 +164,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  PID_param_init(&PIDL,PIDL.target_val,PIDR_Kp,PIDR_Ki,PIDR_Kd);
-	  PID_param_init(&PIDR,PIDR.target_val,PIDR_Kp,PIDR_Ki,PIDR_Kd);
 	  OLED_NewFrame();
-	  sprintf(message,"distanceL:%d",distance);
+	  sprintf(message,"distanceL:%f",Trace_error());
 	  OLED_PrintString(1, 0, message, &font16x16, 0);
 	  sprintf(message,"distanceR:%d",distance2);
 	  OLED_PrintString(1, 16, message, &font16x16, 0);
@@ -317,16 +323,23 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim==&htim7){
 		speednow=10*(short)__HAL_TIM_GetCounter(&htim5);
 		__HAL_TIM_SetCounter(&htim5,0);
-
-		Set_motor_speedL(&PIDL,PIDL.target_val);
         distance+=speednow/10;
 
         speednow2=10*(short)__HAL_TIM_GetCounter(&htim8);
-        		__HAL_TIM_SetCounter(&htim8,0);
+        __HAL_TIM_SetCounter(&htim8,0);
+        distance2+=(speednow2)/10;
 
-        		Set_motor_speedR(&PIDR,PIDR.target_val);
-                distance2+=(speednow2)/10;
+        PID_Trace_realize(&Trace_PID, Trace_error());
+        PID_Angle_realize(&Angle_PID,YawZ);
+        Set_motor_speedL(&PIDL,PIDL.target_val-Trace_PID.output_val-Angle_PID.output_val);
+        Set_motor_speedR(&PIDR,PIDR.target_val+Trace_PID.output_val+Angle_PID.output_val);
+//偏左正输出负  偏右负
 	}
+
+
+
+
+
 
 
 }

@@ -79,6 +79,8 @@ float PosionPID_realize(PID *pid, float actual_val)
 	pid->output_val = pid->Kp * pid->Error +
 	                  pid->Ki * pid->integral +
 	                  pid->Kd *(pid->Error -pid->LastError);
+    if (pid->output_val > 500) pid->output_val = 500;
+    if (pid->output_val < -500) pid->output_val = -500;
 	/*误差传递*/
 	pid-> LastError = pid->Error;
 
