@@ -74,14 +74,17 @@ float Angle_PID_Kd=0;
 char message[255];
 char RxBuffer[RXBUFFERSIZE];   //接受数据
 char RxBuffer2[RXBUFFERSIZE];   //接受数据
+char RxBuffer3[4];   //接受数据
 char TxBuffer[TXBUFFERSIZE];   //发送数据
 float RollX = 0;        //        滚转角
 float PitchY = 0;        //        仰俯角
 float YawZ = 0;        //       偏航角
 int distance, speednow,pwm,distance2,speednow2,pwm2;
-
+float  dis;
+uint8_t tem;
+uint8_t US_100_receive[3];
 uint8_t JY62_z_Zero[] = {0xFF, 0xAA, 0x52};    //数组来存储发送的z轴角度归零的数据
-
+uint8_t US_100_Trig[2] = {0x55,0x50};
 
 /* USER CODE END PV */
 
@@ -137,6 +140,7 @@ Angle_PID.target_val=0;
   MX_TIM7_Init();
   MX_TIM9_Init();
   MX_TIM8_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   /*USER Init BEGIN*/
   HAL_Delay(20);
@@ -149,7 +153,9 @@ Angle_PID.target_val=0;
   /*USER Init END*/
   HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t *)RxBuffer,sizeof(RxBuffer));   //开启接受不定长
   HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t *)RxBuffer2,sizeof(RxBuffer2));   //开启接受不定长
+  HAL_UARTEx_ReceiveToIdle_DMA(&huart1, (uint8_t *)RxBuffer3,sizeof(RxBuffer3));   //开启接受不定长
   __HAL_DMA_DISABLE_IT(huart2.hdmarx, DMA_IT_HT);          //关闭接受半中断
+  __HAL_DMA_DISABLE_IT(huart3.hdmarx, DMA_IT_HT);          //关闭接受半中断
   __HAL_DMA_DISABLE_IT(huart3.hdmarx, DMA_IT_HT);          //关闭接受半中断
 
   HAL_UART_Transmit_DMA(&huart2, JY62_z_Zero, sizeof(JY62_z_Zero));
@@ -158,21 +164,30 @@ Angle_PID.target_val=0;
   HAL_TIM_Base_Start_IT(&htim7);
   HAL_TIM_Encoder_Start(&htim5, TIM_CHANNEL_ALL);
   HAL_TIM_Encoder_Start(&htim8, TIM_CHANNEL_ALL);
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+		HAL_UART_Transmit_DMA(&huart1, US_100_Trig, 3);
+		dis = ((US_100_receive[0] * 256.0f) + US_100_receive[1])/10.0f;
+		tem =  US_100_receive[2]-45;
 	  OLED_NewFrame();
-	  sprintf(message,"distanceL:%f",Trace_error());
+	  sprintf(message,"distance:%.2fcm",dis);
 	  OLED_PrintString(1, 0, message, &font16x16, 0);
-	  sprintf(message,"distanceR:%d",distance2);
+	  sprintf(message,"tem:%02X",US_100_receive[2]);
 	  OLED_PrintString(1, 16, message, &font16x16, 0);
-	  sprintf(message,"speedl:%d",speednow);
-	  OLED_PrintString(1, 32, message, &font16x16, 0);
-	  sprintf(message,"speedr:%d",speednow2);
-	  OLED_PrintString(1, 48, message, &font16x16, 0);
+//	  sprintf(message,"distanceL:%f",Trace_error());
+//	  OLED_PrintString(1, 0, message, &font16x16, 0);
+//	  sprintf(message,"distanceR:%d",distance2);
+//	  OLED_PrintString(1, 16, message, &font16x16, 0);
+//	  sprintf(message,"speedl:%d",speednow);
+//	  OLED_PrintString(1, 32, message, &font16x16, 0);
+//	  sprintf(message,"speedr:%d",speednow2);
+//	  OLED_PrintString(1, 48, message, &font16x16, 0);
 	  OLED_ShowFrame();
 
 
@@ -239,6 +254,15 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){         //GPIO中断
 
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){ //串口接收中断
+	if(huart==&huart2){
+
+
+
+	}
+
+
+
+
 	if(huart==&huart2){  //接收JY62 数据中断
 		if(RxBuffer[22]==0x55){
 			if(RxBuffer[23]==0x53){
@@ -308,6 +332,11 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){ //串
 }
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {//处理数据发送完成后的操作
+	if(huart==&huart1){
+	    HAL_UART_Receive_DMA(&huart1, US_100_receive, 3);
+
+	}
+
 	if(huart == &huart2) {
 
 	     memset(TxBuffer, 0, sizeof(TxBuffer));
@@ -315,7 +344,6 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {//处理数据发送完
 
   }
 }
-
 
 
 
@@ -333,7 +361,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
         PID_Angle_realize(&Angle_PID,YawZ);
         Set_motor_speedL(&PIDL,PIDL.target_val-Trace_PID.output_val-Angle_PID.output_val);
         Set_motor_speedR(&PIDR,PIDR.target_val+Trace_PID.output_val+Angle_PID.output_val);
+
 //偏左正输出负  偏右负
+
+
 	}
 
 
