@@ -161,7 +161,6 @@ void MX_TIM9_Init(void)
   /* USER CODE END TIM9_Init 0 */
 
   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
-  TIM_IC_InitTypeDef sConfigIC = {0};
 
   /* USER CODE BEGIN TIM9_Init 1 */
 
@@ -178,18 +177,6 @@ void MX_TIM9_Init(void)
   }
   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
   if (HAL_TIM_ConfigClockSource(&htim9, &sClockSourceConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_TIM_IC_Init(&htim9) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
-  sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
-  sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
-  sConfigIC.ICFilter = 15;
-  if (HAL_TIM_IC_ConfigChannel(&htim9, &sConfigIC, TIM_CHANNEL_1) != HAL_OK)
   {
     Error_Handler();
   }
@@ -267,7 +254,7 @@ void HAL_TIM_Encoder_MspInit(TIM_HandleTypeDef* tim_encoderHandle)
     PA0-WKUP     ------> TIM5_CH1
     PA1     ------> TIM5_CH2
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
+    GPIO_InitStruct.Pin = ENCODER_Pin|ENCODER2_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -291,7 +278,7 @@ void HAL_TIM_Encoder_MspInit(TIM_HandleTypeDef* tim_encoderHandle)
     PC6     ------> TIM8_CH1
     PC7     ------> TIM8_CH2
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7;
+    GPIO_InitStruct.Pin = encoder_Pin|encoder1_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -307,7 +294,6 @@ void HAL_TIM_Encoder_MspInit(TIM_HandleTypeDef* tim_encoderHandle)
 void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
 {
 
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
   if(tim_baseHandle->Instance==TIM7)
   {
   /* USER CODE BEGIN TIM7_MspInit 0 */
@@ -330,17 +316,6 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
   /* USER CODE END TIM9_MspInit 0 */
     /* TIM9 clock enable */
     __HAL_RCC_TIM9_CLK_ENABLE();
-
-    __HAL_RCC_GPIOE_CLK_ENABLE();
-    /**TIM9 GPIO Configuration
-    PE5     ------> TIM9_CH1
-    */
-    GPIO_InitStruct.Pin = GPIO_PIN_5;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    GPIO_InitStruct.Alternate = GPIO_AF3_TIM9;
-    HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
     /* TIM9 interrupt Init */
     HAL_NVIC_SetPriority(TIM1_BRK_TIM9_IRQn, 0, 0);
@@ -376,7 +351,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* timHandle)
     PB14     ------> TIM12_CH1
     PB15     ------> TIM12_CH2
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_14|GPIO_PIN_15;
+    GPIO_InitStruct.Pin = PWM2_Pin|PWM1_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -405,7 +380,7 @@ void HAL_TIM_Encoder_MspDeInit(TIM_HandleTypeDef* tim_encoderHandle)
     PA0-WKUP     ------> TIM5_CH1
     PA1     ------> TIM5_CH2
     */
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_0|GPIO_PIN_1);
+    HAL_GPIO_DeInit(GPIOA, ENCODER_Pin|ENCODER2_Pin);
 
   /* USER CODE BEGIN TIM5_MspDeInit 1 */
 
@@ -423,7 +398,7 @@ void HAL_TIM_Encoder_MspDeInit(TIM_HandleTypeDef* tim_encoderHandle)
     PC6     ------> TIM8_CH1
     PC7     ------> TIM8_CH2
     */
-    HAL_GPIO_DeInit(GPIOC, GPIO_PIN_6|GPIO_PIN_7);
+    HAL_GPIO_DeInit(GPIOC, encoder_Pin|encoder1_Pin);
 
   /* USER CODE BEGIN TIM8_MspDeInit 1 */
 
@@ -455,11 +430,6 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
   /* USER CODE END TIM9_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_TIM9_CLK_DISABLE();
-
-    /**TIM9 GPIO Configuration
-    PE5     ------> TIM9_CH1
-    */
-    HAL_GPIO_DeInit(GPIOE, GPIO_PIN_5);
 
     /* TIM9 interrupt Deinit */
     HAL_NVIC_DisableIRQ(TIM1_BRK_TIM9_IRQn);

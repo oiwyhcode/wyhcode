@@ -57,8 +57,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define TRIG_Pin GPIO_PIN_6
-#define TRIG_GPIO_Port GPIOE
+#define ENCODER_Pin GPIO_PIN_0
+#define ENCODER_GPIO_Port GPIOA
+#define ENCODER2_Pin GPIO_PIN_1
+#define ENCODER2_GPIO_Port GPIOA
 #define out1_Pin GPIO_PIN_10
 #define out1_GPIO_Port GPIOE
 #define out2_Pin GPIO_PIN_11
@@ -69,6 +71,10 @@ void Error_Handler(void);
 #define out4_GPIO_Port GPIOE
 #define out5_Pin GPIO_PIN_14
 #define out5_GPIO_Port GPIOE
+#define PWM2_Pin GPIO_PIN_14
+#define PWM2_GPIO_Port GPIOB
+#define PWM1_Pin GPIO_PIN_15
+#define PWM1_GPIO_Port GPIOB
 #define motorB1_Pin GPIO_PIN_9
 #define motorB1_GPIO_Port GPIOD
 #define motorA2_Pin GPIO_PIN_10
@@ -77,6 +83,14 @@ void Error_Handler(void);
 #define motorA1_GPIO_Port GPIOD
 #define MOTORB2_Pin GPIO_PIN_12
 #define MOTORB2_GPIO_Port GPIOD
+#define encoder_Pin GPIO_PIN_6
+#define encoder_GPIO_Port GPIOC
+#define encoder1_Pin GPIO_PIN_7
+#define encoder1_GPIO_Port GPIOC
+#define HC06_X_Pin GPIO_PIN_10
+#define HC06_X_GPIO_Port GPIOC
+#define HC06_RX_Pin GPIO_PIN_11
+#define HC06_RX_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
 
