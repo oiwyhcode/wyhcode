@@ -1943,3 +1943,283 @@ arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
  
 已结束构建： STM32F407VGT6.list
  
+21:44:13 **** Incremental Build of configuration Debug for project Myproject ****
+make -j12 all 
+arm-none-eabi-size  Myproject.elf 
+   text	   data	    bss	    dec	    hex	filename
+  44020	    468	   4132	  48620	   bdec	Myproject.elf
+已结束构建： default.size.stdout
+ 
+21:44:14 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tim.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  58068	    500	   6596	  65164	   fe8c	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+21:47:19 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-size  STM32F407VGT6.elf 
+   text	   data	    bss	    dec	    hex	filename
+  58068	    500	   6596	  65164	   fe8c	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+21:47:37 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-size  STM32F407VGT6.elf 
+   text	   data	    bss	    dec	    hex	filename
+  58068	    500	   6596	  65164	   fe8c	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+21:49:34 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:325:38: warning: '%s' directive writing up to 254 bytes into a region of size 251 [-Wformat-overflow=]
+  325 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                                      ^~    ~~~~~~~~~
+../Core/Src/main.c:325:17: note: 'sprintf' output between 6 and 260 bytes into a destination of size 255
+  325 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  58100	    500	   6596	  65196	   feac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+21:50:03 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:326:38: warning: '%s' directive writing up to 254 bytes into a region of size 251 [-Wformat-overflow=]
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                                      ^~    ~~~~~~~~~
+../Core/Src/main.c:326:17: note: 'sprintf' output between 6 and 260 bytes into a destination of size 255
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  58108	    500	   6596	  65204	   feb4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+21:50:34 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:326:38: warning: '%s' directive writing up to 254 bytes into a region of size 251 [-Wformat-overflow=]
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                                      ^~    ~~~~~~~~~
+../Core/Src/main.c:326:17: note: 'sprintf' output between 6 and 260 bytes into a destination of size 255
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  58108	    500	   6596	  65204	   feb4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+21:53:50 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:326:38: warning: '%s' directive writing up to 254 bytes into a region of size 251 [-Wformat-overflow=]
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                                      ^~    ~~~~~~~~~
+../Core/Src/main.c:326:17: note: 'sprintf' output between 6 and 260 bytes into a destination of size 255
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  58108	    500	   6596	  65204	   feb4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+21:54:02 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:326:38: warning: '%s' directive writing up to 254 bytes into a region of size 251 [-Wformat-overflow=]
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                                      ^~    ~~~~~~~~~
+../Core/Src/main.c:326:17: note: 'sprintf' output between 6 and 260 bytes into a destination of size 255
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  58108	    500	   6596	  65204	   feb4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+21:58:54 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tim.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  58108	    500	   6596	  65204	   feb4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+21:59:10 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:326:38: warning: '%s' directive writing up to 254 bytes into a region of size 251 [-Wformat-overflow=]
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                                      ^~    ~~~~~~~~~
+../Core/Src/main.c:326:17: note: 'sprintf' output between 6 and 260 bytes into a destination of size 255
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  58108	    500	   6596	  65204	   feb4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+21:59:35 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:326:38: warning: '%s' directive writing up to 254 bytes into a region of size 251 [-Wformat-overflow=]
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                                      ^~    ~~~~~~~~~
+../Core/Src/main.c:326:17: note: 'sprintf' output between 6 and 260 bytes into a destination of size 255
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  58108	    500	   6596	  65204	   feb4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+22:00:09 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:326:38: warning: '%s' directive writing up to 254 bytes into a region of size 251 [-Wformat-overflow=]
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                                      ^~    ~~~~~~~~~
+../Core/Src/main.c:326:17: note: 'sprintf' output between 6 and 260 bytes into a destination of size 255
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  58108	    500	   6596	  65204	   feb4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+22:00:22 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:326:38: warning: '%s' directive writing up to 254 bytes into a region of size 251 [-Wformat-overflow=]
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                                      ^~    ~~~~~~~~~
+../Core/Src/main.c:326:17: note: 'sprintf' output between 6 and 260 bytes into a destination of size 255
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  58108	    500	   6596	  65204	   feb4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+22:00:36 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:326:38: warning: '%s' directive writing up to 254 bytes into a region of size 251 [-Wformat-overflow=]
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                                      ^~    ~~~~~~~~~
+../Core/Src/main.c:326:17: note: 'sprintf' output between 6 and 260 bytes into a destination of size 255
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  58108	    500	   6596	  65204	   feb4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+22:06:50 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:326:38: warning: '%s' directive writing up to 254 bytes into a region of size 251 [-Wformat-overflow=]
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                                      ^~    ~~~~~~~~~
+../Core/Src/main.c:326:17: note: 'sprintf' output between 6 and 260 bytes into a destination of size 255
+  326 |                 sprintf(message,"2222%s\n",RxBuffer3);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  58108	    500	   6596	  65204	   feb4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
