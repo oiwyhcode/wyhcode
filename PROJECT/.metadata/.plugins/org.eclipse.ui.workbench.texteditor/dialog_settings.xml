@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item key="hasShownOverlayPopupBefore" value="true"/>
-	<item key="replaceBarOpen" value="false"/>
+	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="huart1"/>
+		<item value="&amp;htim8"/>
+		<item value="&amp;htim5"/>
+		<item value="&amp;htim3"/>
+		<item value="&amp;htim12"/>
 		<item value="uart1"/>
+	</list>
+	<list key="replacehistory">
+		<item value="huart4"/>
+		<item value="&amp;htim4"/>
+		<item value="&amp;htim3"/>
+		<item value="&amp;htim1"/>
 	</list>
 </section>

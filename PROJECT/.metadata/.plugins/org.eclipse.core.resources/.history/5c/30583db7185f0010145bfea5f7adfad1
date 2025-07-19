@@ -1,7 +1,0 @@
-
-#ifndef USERHH_TRACE_PID_H_
-#define USERHH_TRACE_PID_H_
-#include "main.h"
-
-
-#endif /* USERHH_TRACE_PID_H_ */

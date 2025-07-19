@@ -1,11 +1,11 @@
 #include "Trace_PID.h"
 uint8_t Read_GPIO(GPIO_TypeDef* port, uint16_t pin) {
-    return (HAL_GPIO_ReadPin(port, pin) == GPIO_PIN_SET) ? 0 : 1;
+    return (HAL_GPIO_ReadPin(port, pin) == GPIO_PIN_SET) ? 1 : 0;
 }
 
 
 
-uint8_t out5,out4,out3,out2,out1=0;
+uint8_t out6,out7,out8,out5,out4,out3,out2,out1=0;
 
 
 
@@ -21,13 +21,18 @@ void PID_Trace_init(PID_Trace *pid,float target_val,float Kp,float Ki,float Kd)
 
 
 float Trace_error(void) {
-//    out5 = Read_GPIO(GPIOE, out5_Pin);
-//    out4 = Read_GPIO(GPIOE, out4_Pin);
-//    out3 = Read_GPIO(GPIOE, out3_Pin);
-//    out2 = Read_GPIO(GPIOE, out2_Pin);
-//    out1 = Read_GPIO(GPIOE, out1_Pin);
-
-    float Error = (-2.0f * out5) + (-1.0f * out4) + (0.0f * out3) + (1.0f * out2) + (2.0f * out1);
+//	    out1 = Read_GPIO(GPIOE, OUT1_Pin);
+	    out2 = Read_GPIO(GPIOE, OUT2_Pin);
+	    out3 = Read_GPIO(GPIOE, OUT3_Pin);
+	    out4 = Read_GPIO(GPIOE, OUT4_Pin);
+	    out5 = Read_GPIO(GPIOE, OUT5_Pin);
+	    out6 = Read_GPIO(GPIOE, OUT6_Pin);
+//	    out7 = Read_GPIO(GPIOE, OUT7_Pin);
+//	    out8 = Read_GPIO(GPIOE, OUT8_Pin);
+	    out8 = 0;
+	    out1 = 0;
+	   	    out7 = 0;
+    float Error = (-3.0f * out8)+(-2.0f * out7) + (-1.0f * out6) + (0.0f * out5) + (0.0f * out4) + (1.0f * out3)+ (2.0f * out2)+ (3.0f * out1);
     return Error;
 
 }

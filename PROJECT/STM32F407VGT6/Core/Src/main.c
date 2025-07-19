@@ -75,7 +75,7 @@ float Angle_PID_Kd=0;
 char message[255];
 char RxBuffer[RXBUFFERSIZE];   //接受数据
 char RxBuffer2[RXBUFFERSIZE];   //接受数据
-char RxBuffer3[4];   //接受数据
+char RxBuffer3[RXBUFFERSIZE];   //接受数据
 char TxBuffer[TXBUFFERSIZE];   //发送数据
 float RollX = 0;        //        滚转角
 float PitchY = 0;        //        仰俯角
@@ -134,12 +134,14 @@ Angle_PID.target_val=0;
   MX_I2C1_Init();
   MX_USART3_UART_Init();
   MX_TIM12_Init();
-  MX_TIM5_Init();
   MX_TIM7_Init();
-  MX_TIM9_Init();
-  MX_TIM8_Init();
   MX_USART1_UART_Init();
   MX_UART4_Init();
+  MX_UART5_Init();
+  MX_TIM2_Init();
+  MX_TIM4_Init();
+  MX_USART6_UART_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   /*USER Init BEGIN*/
   HAL_Delay(20);
@@ -151,18 +153,20 @@ Angle_PID.target_val=0;
 
   /*USER Init END*/
   HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t *)RxBuffer,sizeof(RxBuffer));   //开启接受不定长
-  HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t *)RxBuffer2,sizeof(RxBuffer2));   //开启接受不定长
-  HAL_UARTEx_ReceiveToIdle_DMA(&huart1, (uint8_t *)RxBuffer3,sizeof(RxBuffer3));   //开启接受不定长
+  HAL_UARTEx_ReceiveToIdle_DMA(&huart1, (uint8_t *)RxBuffer2,sizeof(RxBuffer2));   //开启接受不定长
+  HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t *)RxBuffer3,sizeof(RxBuffer3));   //开启接受不定长
   __HAL_DMA_DISABLE_IT(huart2.hdmarx, DMA_IT_HT);          //关闭接受半中断
   __HAL_DMA_DISABLE_IT(huart3.hdmarx, DMA_IT_HT);          //关闭接受半中断
-  __HAL_DMA_DISABLE_IT(huart3.hdmarx, DMA_IT_HT);          //关闭接受半中断
+  __HAL_DMA_DISABLE_IT(huart1.hdmarx, DMA_IT_HT);          //关闭接受半中断
 
   HAL_UART_Transmit_DMA(&huart2, JY62_z_Zero, sizeof(JY62_z_Zero));
-  HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_1);
-  HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_2);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
   HAL_TIM_Base_Start_IT(&htim7);
-  HAL_TIM_Encoder_Start(&htim5, TIM_CHANNEL_ALL);
-  HAL_TIM_Encoder_Start(&htim8, TIM_CHANNEL_ALL);
+  HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
+  HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);
 
 
   /* USER CODE END 2 */
@@ -172,12 +176,13 @@ Angle_PID.target_val=0;
   while (1)
   {
 
-	  OLED_NewFrame();
-//	  sprintf(message,"distance:%.2fcm",get_filtered_distance());
-//	  OLED_PrintString(1, 0, message, &font16x16, 0);
 
-//	  sprintf(message,"distanceL:%f",Trace_error());
-//	  OLED_PrintString(1, 0, message, &font16x16, 0);
+	  OLED_NewFrame();
+	  sprintf(message,"distance:%.2fcm",get_filtered_distance());
+	  OLED_PrintString(1, 16, message, &font16x16, 0);
+
+	  sprintf(message,"distanceL:%f",Trace_error());
+	  OLED_PrintString(1, 0, message, &font16x16, 0);
 //	  sprintf(message,"distanceR:%d",distance2);
 //	  OLED_PrintString(1, 16, message, &font16x16, 0);
 //	  sprintf(message,"speedl:%d",speednow);
@@ -250,31 +255,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){         //GPIO中断
 
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){ //串口接收中断
-
-
-	if(huart==&huart2){  //接收JY62 数据中断
-		if(RxBuffer[22]==0x55){
-			if(RxBuffer[23]==0x53){
-				RollX = (float)(((short)(RxBuffer[25]<<8)|RxBuffer[24])/32768.0*180);//处理数据，依据官方所给文档
-				PitchY = (float)((short)((RxBuffer[27]<<8)|RxBuffer[26])/32768.0*180);
-				YawZ = (float)((short)((RxBuffer[29]<<8)|RxBuffer[28])/32768.0*180);
-			}
-		}
-
-		sprintf(TxBuffer,"%.2f,%.2f,%.2f,%d,%d,%.2f,%.2f,%.2f,%.2f\n",
-				RollX,PitchY,YawZ,speednow,speednow2,
-				PIDL.target_val,PIDL.output_val,PIDR.target_val,PIDR.output_val);
-
-
-		HAL_UART_Transmit_DMA(&huart3, (uint8_t *)TxBuffer, strlen(TxBuffer));   //将数据通过串口一发送出去
-		HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t *)RxBuffer,sizeof(RxBuffer));   //开启接受不定长
-	}
-
-
-
-
-
-	if(huart==&huart3){
+	if(huart==&huart1){
 		memset(message, 0, sizeof(message));  // 整个数组
 		 if (Size < sizeof(RxBuffer2)) {
 		            RxBuffer2[Size] = '\0';  // 添加字符串结束符
@@ -307,10 +288,56 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){ //串
 	         }
 
 
-	   	 HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t *)RxBuffer2,sizeof(RxBuffer2));   //开启接受不定长
+	   	 HAL_UARTEx_ReceiveToIdle_DMA(&huart1, (uint8_t *)RxBuffer2,sizeof(RxBuffer2));   //开启接受不定长
 
 
 	}
+
+
+	if(huart==&huart2){  //接收JY62 数据中断
+		if(RxBuffer[22]==0x55){
+			if(RxBuffer[23]==0x53){
+				RollX = (float)(((short)(RxBuffer[25]<<8)|RxBuffer[24])/32768.0*180);//处理数据，依据官方所给文档
+				PitchY = (float)((short)((RxBuffer[27]<<8)|RxBuffer[26])/32768.0*180);
+				YawZ = (float)((short)((RxBuffer[29]<<8)|RxBuffer[28])/32768.0*180);
+			}
+		}
+
+		sprintf(TxBuffer,"%.2f,%.2f,%.2f,%d,%d,%.2f,%.2f,%.2f,%.2f\n",
+				RollX,PitchY,YawZ,speednow,speednow2,
+				PIDL.target_val,PIDL.output_val,PIDR.target_val,PIDR.output_val);
+
+
+		//HAL_UART_Transmit_DMA(&huart1, (uint8_t *)TxBuffer, strlen(TxBuffer));   //将数据通过串口一发送出去
+		HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t *)RxBuffer,sizeof(RxBuffer));   //开启接受不定长
+	}
+
+
+	if(huart==&huart3){
+		memset(message, 0, sizeof(message));  // 整个数组
+		 if (Size < sizeof(RxBuffer3)) {
+		            RxBuffer3[Size] = '\0';  // 添加字符串结束符
+		        } else {
+		            RxBuffer3[sizeof(RxBuffer3) - 1] = '\0';  // 防止越界
+		        }
+		sprintf(message,"2222%s\n",RxBuffer3);
+
+		 OLED_NewFrame();
+			  OLED_PrintString(1, 32, RxBuffer3, &font16x16, 0);
+			  OLED_ShowFrame();
+
+
+		HAL_UART_Transmit_DMA(&huart3, (uint8_t *)RxBuffer3, strlen(RxBuffer3));
+		HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t *)RxBuffer3,sizeof(RxBuffer3));   //开启接受不定长
+
+	}
+
+
+
+
+
+
+
 
 
 
@@ -338,12 +365,12 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {//处理数据发送完
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim==&htim7){
-		speednow=10*(short)__HAL_TIM_GetCounter(&htim5);
-		__HAL_TIM_SetCounter(&htim5,0);
+		speednow=10*(short)__HAL_TIM_GetCounter(&htim3);
+		__HAL_TIM_SetCounter(&htim3,0);
         distance+=speednow/10;
 
-        speednow2=10*(short)__HAL_TIM_GetCounter(&htim8);
-        __HAL_TIM_SetCounter(&htim8,0);
+        speednow2=10*(short)__HAL_TIM_GetCounter(&htim4);
+        __HAL_TIM_SetCounter(&htim4,0);
         distance2+=(speednow2)/10;
 
         PID_Trace_realize(&Trace_PID, Trace_error());

@@ -11,12 +11,12 @@ uint8_t US_100_Trig_tem = 0x50;
 
 float get_filtered_distance(void) {
     // 发送触发命令
-    HAL_UART_Transmit_DMA(&huart1, &US_100_Trig_distance, 1);
+    HAL_UART_Transmit_DMA(&huart4, &US_100_Trig_distance, 1);
     HAL_Delay(10);
 
     // 接收数据前清空缓冲区（避免残留旧数据）
-
-    HAL_UART_Receive_DMA(&huart1, US_100_receive_dis, 2);
+    HAL_UART_Transmit_DMA(&huart1, &US_100_Trig_distance, 1);
+    HAL_UART_Receive_DMA(&huart4, US_100_receive_dis, 2);
     HAL_Delay(10);
 
     // 计算原始距离

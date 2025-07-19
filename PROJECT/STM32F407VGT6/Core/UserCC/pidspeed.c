@@ -2,27 +2,27 @@
 
 void Set_motor_pwmL(float pwm){
 	if(pwm<0)
-	{HAL_GPIO_WritePin(GPIOD, GPIO_PIN_10, ENABLE);
-	 HAL_GPIO_WritePin(GPIOD, GPIO_PIN_11, DISABLE);
-	 __HAL_TIM_SET_COMPARE(&htim12,TIM_CHANNEL_1,-pwm);
+	{HAL_GPIO_WritePin(GPIOE, GPIO_PIN_4, ENABLE);
+	 HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, DISABLE);
+	 __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,-pwm);
 	}
 	else if(pwm>=0){
-		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_10, DISABLE);
-		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_11, ENABLE);
-	 __HAL_TIM_SET_COMPARE(&htim12,TIM_CHANNEL_1,pwm);
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_4, DISABLE);
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, ENABLE);
+	 __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,pwm);
 	}
 }
 
 void Set_motor_pwmR(float pwm){
 	if(pwm<0)
-	{HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, DISABLE);
-	 HAL_GPIO_WritePin(GPIOD, GPIO_PIN_9, ENABLE);
-	 __HAL_TIM_SET_COMPARE(&htim12,TIM_CHANNEL_2,-pwm);
+	{HAL_GPIO_WritePin(GPIOE, GPIO_PIN_2, DISABLE);
+	 HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, ENABLE);
+	 __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,-pwm);
 	}
 	else if(pwm>=0){
-		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, ENABLE);
-		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_9, DISABLE);
-	 __HAL_TIM_SET_COMPARE(&htim12,TIM_CHANNEL_2,pwm);
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_2, ENABLE);
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, DISABLE);
+	 __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,pwm);
 	}
 }
 
@@ -79,8 +79,8 @@ float PosionPID_realize(PID *pid, float actual_val)
 	pid->output_val = pid->Kp * pid->Error +
 	                  pid->Ki * pid->integral +
 	                  pid->Kd *(pid->Error -pid->LastError);
-    if (pid->output_val > 500) pid->output_val = 500;
-    if (pid->output_val < -500) pid->output_val = -500;
+    if (pid->output_val > 1000) pid->output_val = 1000;
+    if (pid->output_val < -1000) pid->output_val = -1000;
 	/*误差传递*/
 	pid-> LastError = pid->Error;
 

@@ -16,8 +16,8 @@ typedef struct
 
 extern int speednow;
 extern int speednow2;
-extern TIM_HandleTypeDef htim12;
 
+extern TIM_HandleTypeDef htim2;
 
 void PID_param_init(PID *pid,float target_val,float Kp,float Ki,float Kd);
 void Set_motor_speedL(PID *pid,float speed);
