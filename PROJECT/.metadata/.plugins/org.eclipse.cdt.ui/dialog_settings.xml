@@ -3,6 +3,8 @@
 	<item key="LastUsedSourceTemplate" value="默认的 C 源文件模板"/>
 	<item key="LastUsedHeaderTemplate" value="默认的 C 头文件模板"/>
 	<section name="completion_proposal_size">
+		<item key="size.x" value="477"/>
+		<item key="size.y" value="274"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>

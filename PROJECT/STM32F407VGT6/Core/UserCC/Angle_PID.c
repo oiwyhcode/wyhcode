@@ -27,8 +27,8 @@ void PID_Angle_realize(PID_Angle *pid, float CurrentAngle) {
     pid->output_val = (pid->Kp * pid->Error) +
                   (pid->Ki * pid->Integral) +
                   (pid->Kd * derivative);
-    if (pid->output_val > 500) pid->output_val = 500;
-    if (pid->output_val < -500) pid->output_val = -500;
+    if (pid->output_val > 300) pid->output_val = 300;
+    if (pid->output_val < -500) pid->output_val = -300;
     // 5. 更新上次误差
     pid->LastError = pid->Error;
 }

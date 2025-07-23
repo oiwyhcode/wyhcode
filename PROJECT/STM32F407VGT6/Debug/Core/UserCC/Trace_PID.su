@@ -1,4 +1,5 @@
-../Core/UserCC/Trace_PID.c:2:9:Read_GPIO	16	static
-../Core/UserCC/Trace_PID.c:12:6:PID_Trace_init	32	static
-../Core/UserCC/Trace_PID.c:23:7:Trace_error	16	static
-../Core/UserCC/Trace_PID.c:41:6:PID_Trace_realize	24	static
+../Core/UserCC/Trace_PID.c:4:9:Read_GPIO	16	static
+../Core/UserCC/Trace_PID.c:11:6:Get_Sensor_Trace	16	static
+../Core/UserCC/Trace_PID.c:25:6:PID_Trace_init	32	static
+../Core/UserCC/Trace_PID.c:35:7:Trace_error	16	static
+../Core/UserCC/Trace_PID.c:59:6:PID_Trace_realize	24	static

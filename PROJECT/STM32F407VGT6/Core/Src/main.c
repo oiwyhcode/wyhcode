@@ -45,6 +45,8 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
+
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -55,16 +57,18 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-float PIDL_Kp=3.4;
-float PIDL_Ki=2.4;
-float PIDL_Kd=1.2;
-float PIDR_Kp=3.4;
-float PIDR_Ki=2.4;
-float PIDR_Kd=1.2;
+uint8_t base_speed_L= 0;
+uint8_t base_speed_R =0;
+float PIDL_Kp=7;
+float PIDL_Ki=1;
+float PIDL_Kd=3.5;
+float PIDR_Kp=7;
+float PIDR_Ki=1;
+float PIDR_Kd=3.5;
 float Trace_PID_Kp=0;
 float Trace_PID_Ki=0;
 float Trace_PID_Kd=0;
-float Angle_PID_Kp=0;
+float Angle_PID_Kp=3;
 float Angle_PID_Ki=0;
 float Angle_PID_Kd=0;
 	PID PIDL;
@@ -83,6 +87,8 @@ float YawZ = 0;        //       偏航角
 uint8_t JY62_z_Zero[] = {0xFF, 0xAA, 0x52};    //数组来存储发送的z轴角度归零的数据
 
 int distance, speednow,pwm,distance2,speednow2,pwm2;
+
+
 
 /* USER CODE END PV */
 
@@ -142,12 +148,13 @@ Angle_PID.target_val=0;
   MX_TIM4_Init();
   MX_USART6_UART_Init();
   MX_TIM3_Init();
+  MX_TIM14_Init();
   /* USER CODE BEGIN 2 */
   /*USER Init BEGIN*/
   HAL_Delay(20);
   OLED_Init();
   PID_Trace_init(&Trace_PID,Trace_PID.target_val,Trace_PID_Kp,Trace_PID_Ki,Trace_PID_Kd);
-  PID_param_init(&PIDL,PIDL.target_val,PIDR_Kp,PIDR_Ki,PIDR_Kd);
+  PID_param_init(&PIDL,PIDL.target_val,PIDL_Kp,PIDL_Ki,PIDL_Kd);
   PID_param_init(&PIDR,PIDR.target_val,PIDR_Kp,PIDR_Ki,PIDR_Kd);
   PID_Angle_init(&Angle_PID, Angle_PID.target_val, Angle_PID_Kp, Angle_PID_Ki, Angle_PID_Kd);
 
@@ -167,10 +174,11 @@ Angle_PID.target_val=0;
   HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_2);
   HAL_TIM_Base_Start_IT(&htim7);
+  HAL_TIM_Base_Start_IT(&htim14);
   HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
   HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);
-
-
+  __HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_1,00);
+  __HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_2,00);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -178,14 +186,12 @@ Angle_PID.target_val=0;
   while (1)
   {
 
-	  __HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_1,100);
-	  __HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_2,100);
+	   Get_Sensor_Trace();
 	  OLED_NewFrame();
-	  sprintf(message,"distance:%.2fcm",get_filtered_distance());
+	  sprintf(message,"distance:%.2fcm",Trace_error());
 	  OLED_PrintString(1, 16, message, &font16x16, 0);
 
-	  sprintf(message,"distanceL:%f",Trace_error());
-	  OLED_PrintString(1, 0, message, &font16x16, 0);
+
 //	  sprintf(message,"distanceR:%d",distance2);
 //	  OLED_PrintString(1, 16, message, &font16x16, 0);
 //	  sprintf(message,"speedl:%d",speednow);
@@ -268,28 +274,27 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){ //串
 //左边电机PID在线调参
 
 		 if (sscanf(RxBuffer2, "PIDL %f %f %f", &PIDL_Kp, &PIDL_Ki, &PIDL_Kd) == 3) {
-			 PIDL_Kp=PIDL_Kp;
-			 PIDL_Ki=PIDL_Ki;
-			 PIDL_Kd=PIDL_Kd;
+			 PIDL.Kp=PIDL_Kp;
+			 PIDL.Ki=PIDL_Ki;
+			 PIDL.Kd=PIDL_Kd;
 
 
 		        }
 		 if (sscanf(RxBuffer2, "speedl %f", &PIDL.target_val)== 1) {
-               PIDL.target_val=PIDL.target_val;
+			 base_speed_L=PIDL.target_val;
 
 	         }
 
 //右边电机PID在线调参
 		 if (sscanf(RxBuffer2, "PIDR %f %f %f", &PIDR_Kp, &PIDR_Ki, &PIDR_Kd) == 3) {
-			 PIDR_Kp=PIDR_Kp;
-			 PIDR_Ki=PIDR_Ki;
-			 PIDR_Kd=PIDR_Kd;
+			 PIDR.Kp=PIDR_Kp;
+			 PIDR.Ki=PIDR_Ki;
+			 PIDR.Kd=PIDR_Kd;
 		        }
 		 if (sscanf(RxBuffer2, "speedr %f", &PIDR.target_val)== 1) {
-               PIDR.target_val=PIDR.target_val;
+			 base_speed_R=PIDR.target_val;
 
 	         }
-
 
 	   	 HAL_UARTEx_ReceiveToIdle_DMA(&huart1, (uint8_t *)RxBuffer2,sizeof(RxBuffer2));   //开启接受不定长
 
@@ -310,8 +315,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){ //串
 				RollX,PitchY,YawZ,speednow,speednow2,
 				PIDL.target_val,PIDL.output_val,PIDR.target_val,PIDR.output_val);
 
-
-		//HAL_UART_Transmit_DMA(&huart1, (uint8_t *)TxBuffer, strlen(TxBuffer));   //将数据通过串口一发送出去
+     	HAL_UART_Transmit_DMA(&huart1, (uint8_t *)TxBuffer, strlen(TxBuffer));   //将数据通过串口一发送出去
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t *)RxBuffer,sizeof(RxBuffer));   //开启接受不定长
 	}
 
@@ -323,14 +327,9 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){ //串
 		        } else {
 		            RxBuffer3[sizeof(RxBuffer3) - 1] = '\0';  // 防止越界
 		        }
-		sprintf(message,"2222%s\n",RxBuffer3);
 
-		 OLED_NewFrame();
-			  OLED_PrintString(1, 32, RxBuffer3, &font16x16, 0);
-			  OLED_ShowFrame();
-
-
-		HAL_UART_Transmit_DMA(&huart3, (uint8_t *)RxBuffer3, strlen(RxBuffer3));
+//
+//		HAL_UART_Transmit_DMA(&huart3, (uint8_t *)RxBuffer3, strlen(RxBuffer3));
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t *)RxBuffer3,sizeof(RxBuffer3));   //开启接受不定长
 
 	}
@@ -378,9 +377,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 
         PID_Trace_realize(&Trace_PID, Trace_error());
         PID_Angle_realize(&Angle_PID,YawZ);
-        Set_motor_speedL(&PIDL,PIDL.target_val-Trace_PID.output_val-Angle_PID.output_val);
-        Set_motor_speedR(&PIDR,PIDR.target_val+Trace_PID.output_val+Angle_PID.output_val);
-
+        Set_motor_speedL(&PIDL,base_speed_L-Angle_PID.output_val);
+        Set_motor_speedR(&PIDR,base_speed_L+Angle_PID.output_val);
+    //    -Trace_PID.output_val-Angle_PID.output_val
+	//	+Trace_PID.output_val+Angle_PID.output_val
 //偏左正输出负  偏右负
 
 
@@ -395,7 +395,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 }
 
 
+void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *hi2c){
 
+}
 
 /* USER CODE END 4 */
 

@@ -71,10 +71,10 @@ float PosionPID_realize(PID *pid, float actual_val)
 	pid->Error = pid->target_val - actual_val;
 	/*积分项*/
 	pid->integral += pid->Error;
-	if (pid->integral > 800 / pid->Ki) {
-	    pid->integral = 800 / pid->Ki;
-	} else if (pid->integral < -800 / pid->Ki) {
-	    pid->integral = -800 / pid->Ki;}
+	if (pid->integral > 750) {
+	    pid->integral = 750 ;
+	} else if (pid->integral < -750 ) {
+	    pid->integral = -750 ;}
 	/*PID算法实现*/
 	pid->output_val = pid->Kp * pid->Error +
 	                  pid->Ki * pid->integral +

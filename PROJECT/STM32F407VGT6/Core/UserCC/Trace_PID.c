@@ -1,13 +1,26 @@
 #include "Trace_PID.h"
+uint8_t data_read;
+uint8_t Data_Trace[8];
 uint8_t Read_GPIO(GPIO_TypeDef* port, uint16_t pin) {
     return (HAL_GPIO_ReadPin(port, pin) == GPIO_PIN_SET) ? 1 : 0;
 }
 
 
 
-uint8_t out6,out7,out8,out5,out4,out3,out2,out1=0;
+
+void Get_Sensor_Trace(){
+	uint8_t i=0;
+//    HAL_I2C_Master_Receive_IT(&hi2c3, SLAVE_ADDRESS << 1, &data_read, 1);
+    for(i = 0; i < 8; i++)
+    {
+        // 提取第i位：用 (1 << i) 生成对应位的掩码，与data_read做按位与
+        // 若结果非0，说明第i位为1；否则为0
+        Data_Trace[i] = (data_read & (1 << i)) ? 1 : 0;
+    }
+        HAL_UART_Transmit_DMA(&huart1, &Data_Trace[8], 1);
 
 
+}
 
 void PID_Trace_init(PID_Trace *pid,float target_val,float Kp,float Ki,float Kd)
 {
@@ -19,23 +32,28 @@ void PID_Trace_init(PID_Trace *pid,float target_val,float Kp,float Ki,float Kd)
 
 }
 
-
 float Trace_error(void) {
-//	    out1 = Read_GPIO(GPIOE, OUT1_Pin);
-	    out2 = Read_GPIO(GPIOE, OUT2_Pin);
-	    out3 = Read_GPIO(GPIOE, OUT3_Pin);
-	    out4 = Read_GPIO(GPIOE, OUT4_Pin);
-	    out5 = Read_GPIO(GPIOE, OUT5_Pin);
-	    out6 = Read_GPIO(GPIOE, OUT6_Pin);
-//	    out7 = Read_GPIO(GPIOE, OUT7_Pin);
-//	    out8 = Read_GPIO(GPIOE, OUT8_Pin);
-	    out8 = 0;
-	    out1 = 0;
-	   	    out7 = 0;
-    float Error = (-3.0f * out8)+(-2.0f * out7) + (-1.0f * out6) + (0.0f * out5) + (0.0f * out4) + (1.0f * out3)+ (2.0f * out2)+ (3.0f * out1);
+
+    float Error = (-3.0f * Data_Trace[7])+(-2.0f * Data_Trace[6]) + (-1.0f * Data_Trace[5]) + (0.0f * Data_Trace[4]) + (0.0f * Data_Trace[3]) + (1.0f * Data_Trace[2])+ (2.0f * Data_Trace[1])+ (3.0f * Data_Trace[0]);
     return Error;
 
 }
+//float Trace_error(void) {
+////	    out1 = Read_GPIO(GPIOE, OUT1_Pin);
+//	    out2 = Read_GPIO(GPIOE, OUT2_Pin);
+//	    out3 = Read_GPIO(GPIOE, OUT3_Pin);
+//	    out4 = Read_GPIO(GPIOE, OUT4_Pin);
+//	    out5 = Read_GPIO(GPIOE, OUT5_Pin);
+//	    out6 = Read_GPIO(GPIOE, OUT6_Pin);
+////	    out7 = Read_GPIO(GPIOE, OUT7_Pin);
+////	    out8 = Read_GPIO(GPIOE, OUT8_Pin);
+//	    out8 = 0;
+//	    out1 = 0;
+//	   	    out7 = 0;
+//    float Error = (-3.0f * out8)+(-2.0f * out7) + (-1.0f * out6) + (0.0f * out5) + (0.0f * out4) + (1.0f * out3)+ (2.0f * out2)+ (3.0f * out1);
+//    return Error;
+//
+//}
 
 
 void PID_Trace_realize(PID_Trace *pid, float CurrentValue) {
