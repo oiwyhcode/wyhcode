@@ -109,10 +109,6 @@ void Error_Handler(void);
 #define ENCODERA_1_GPIO_Port GPIOD
 #define ENCODERA_2_Pin GPIO_PIN_13
 #define ENCODERA_2_GPIO_Port GPIOD
-#define TTL_TX_Pin GPIO_PIN_9
-#define TTL_TX_GPIO_Port GPIOA
-#define TTL_RX_Pin GPIO_PIN_10
-#define TTL_RX_GPIO_Port GPIOA
 #define HS100_TX_Pin GPIO_PIN_10
 #define HS100_TX_GPIO_Port GPIOC
 #define Hs100_RX_Pin GPIO_PIN_11

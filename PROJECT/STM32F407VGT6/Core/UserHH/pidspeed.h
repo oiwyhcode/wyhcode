@@ -10,6 +10,7 @@ typedef struct
 	float Kp,Ki,Kd;     //比例、积分、微分系数
 	float integral;     //积分值
 	float output_val;   //输出值
+	float target_finally;
 }PID;
 
 
@@ -23,5 +24,7 @@ void PID_param_init(PID *pid,float target_val,float Kp,float Ki,float Kd);
 void Set_motor_speedL(PID *pid,float speed);
 void Set_motor_speedR(PID *pid,float speed);
 float PosionPID_realize(PID *pid, float actual_val);
+void Set_motor_expect_speedL(PID *pid,float speed);
+void Set_motor_expect_speedR(PID *pid,float speed);
 
 #endif /* MYCODE_PID_H_ */

@@ -13,6 +13,13 @@ typedef struct
 	float integral;     //积分值
 	float output_val;   //输出值
 }PID_Servo;
-void PID_Servo_realize(PID_Servo *pid, float CurrentAngle);
 
+extern float servo_angle,servo_pwm;
+extern TIM_HandleTypeDef htim12;
+void PID_Servo_init(PID_Servo *pid,float target_val,float Kp,float Ki,float Kd);
+void PID_Servo_realize(PID_Servo *pid, float CurrentAngle);
+float Get_Servo_Angle_Down();
+float Get_Servo_Angle_Up();
+void Set_Servo_Angle_Down(uint16_t angle);
+void Set_Servo_Angle_Up(uint16_t angle);
 #endif /* USERHH_SERVO_H_ */

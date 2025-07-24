@@ -1,2 +1,6 @@
 ../Core/UserCC/servo.c:3:6:PID_Servo_init	1
-../Core/UserCC/servo.c:11:6:PID_Servo_realize	5
+../Core/UserCC/servo.c:11:6:Set_Servo_Angle_Down	3
+../Core/UserCC/servo.c:17:6:Set_Servo_Angle_Up	3
+../Core/UserCC/servo.c:27:7:Get_Servo_Angle_Down	1
+../Core/UserCC/servo.c:34:7:Get_Servo_Angle_Up	1
+../Core/UserCC/servo.c:41:6:PID_Servo_realize	5

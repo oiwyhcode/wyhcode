@@ -26,12 +26,17 @@ void Set_motor_pwmR(float pwm){
 	}
 }
 
-
+void Set_motor_expect_speedL(PID *pid,float speed){
+	pid->target_val=speed;
+}
+void Set_motor_expect_speedR(PID *pid,float speed){
+	pid->target_val=speed;
+}
 /*设置左轮速度值 pid为PID参数结构体
  * speed为期望达到速度
  */
 void Set_motor_speedL(PID *pid,float speed){
-	pid->target_val=speed;
+	pid->target_finally=speed;
 	Set_motor_pwmL(PosionPID_realize(pid,speednow));
 
 
@@ -40,7 +45,7 @@ void Set_motor_speedL(PID *pid,float speed){
  * speed为期望达到速度
  */
 void Set_motor_speedR(PID *pid,float speed){
-	pid->target_val=speed;
+	pid->target_finally=speed;
 	Set_motor_pwmR(PosionPID_realize(pid,speednow2));
 
 }
@@ -68,7 +73,7 @@ void PID_param_init(PID *pid,float target_val,float Kp,float Ki,float Kd)
 float PosionPID_realize(PID *pid, float actual_val)
 {
 	/*计算目标值与实际值的误差*/
-	pid->Error = pid->target_val - actual_val;
+	pid->Error = pid->target_finally - actual_val;
 	/*积分项*/
 	pid->integral += pid->Error;
 	if (pid->integral > 750) {
