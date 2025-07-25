@@ -9,14 +9,14 @@ void PID_Servo_init(PID_Servo *pid,float target_val,float Kp,float Ki,float Kd)
 }
 
 void Set_Servo_Angle_Down(uint16_t pwm){
-	 if(pwm>250) pwm=250;
+	 if(pwm>170) pwm=170;
 	 if(pwm<50) pwm=50;
 	__HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_1,pwm);
 }
 
 void Set_Servo_Angle_Up(uint16_t pwm){
 
-	 if(pwm>150) pwm=150;
+	 if(pwm>120) pwm=120;
 	 if(pwm<50) pwm=50;
 
 	__HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_2,pwm);

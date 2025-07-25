@@ -12,7 +12,7 @@ uint8_t Read_GPIO(GPIO_TypeDef* port, uint16_t pin) {
 
 void Get_Sensor_Trace(){
 	uint8_t i=0;
-    HAL_I2C_Master_Receive_IT(&hi2c3, SLAVE_ADDRESS << 1, &data_read, 1);
+ //   HAL_I2C_Master_Receive_IT(&hi2c3, SLAVE_ADDRESS << 1, &data_read, 1);
     for(i = 0; i < 8; i++)
     {
         // 提取第i位：用 (1 << i) 生成对应位的掩码，与data_read做按位与

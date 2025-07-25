@@ -57,7 +57,7 @@ void MX_GPIO_Init(void)
                           |motorC_IN2_Pin|motorC_IN1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, BUZZ_Pin|LED_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, BUZZ_Pin|LED_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, motorD_IN2_Pin|motorD_IN1_Pin, GPIO_PIN_RESET);
