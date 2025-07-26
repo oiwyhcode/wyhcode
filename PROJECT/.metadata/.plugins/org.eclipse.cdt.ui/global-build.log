@@ -11500,3 +11500,665 @@ arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
  
 已结束构建： STM32F407VGT6.list
  
+14:06:16 **** 构建 of configuration Debug for project Myproject ****
+make -j12 all 
+arm-none-eabi-size  Myproject.elf 
+   text	   data	    bss	    dec	    hex	filename
+  44020	    468	   4132	  48620	   bdec	Myproject.elf
+已结束构建： default.size.stdout
+ 
+14:06:17 **** 构建 of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/UserCC/oled.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/UserCC/oled.d" -MT"Core/UserCC/oled.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/UserCC/oled.o"
+arm-none-eabi-gcc "../Core/Src/dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/dma.d" -MT"Core/Src/dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/dma.o"
+arm-none-eabi-gcc "../Core/Src/i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/i2c.d" -MT"Core/Src/i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/i2c.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+A:/STM32CUBEIDE/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `main':
+A:/git/WYHCODE/PROJECT/STM32F407VGT6/Debug/../Core/Src/main.c:208:(.text.main+0x354): undefined reference to `huart1'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:65: STM32F407VGT6.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+14:07:10 **** Incremental Build of configuration Debug for project Myproject ****
+make -j12 all 
+arm-none-eabi-size  Myproject.elf 
+   text	   data	    bss	    dec	    hex	filename
+  44020	    468	   4132	  48620	   bdec	Myproject.elf
+已结束构建： default.size.stdout
+ 
+14:07:10 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  62572	    520	   6536	  69628	  10ffc	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+14:11:11 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/UserCC/Trace_PID.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/UserCC/Trace_PID.d" -MT"Core/UserCC/Trace_PID.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/UserCC/Trace_PID.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  62876	    520	   6544	  69940	  11134	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+14:23:45 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/UserCC/Trace_PID.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/UserCC/Trace_PID.d" -MT"Core/UserCC/Trace_PID.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/UserCC/Trace_PID.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63652	    520	   6544	  70716	  1143c	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+14:37:23 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63340	    520	   6536	  70396	  112fc	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+14:41:14 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63348	    520	   6536	  70404	  11304	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+14:43:32 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  62596	    520	   6536	  69652	  11014	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+14:45:37 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63316	    520	   6536	  70372	  112e4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+14:45:59 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:210:47: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
+  210 |                   sprintf(message,"distanceR:%d",PIDL.output_val);
+      |                                              ~^  ~~~~~~~~~~~~~~~
+      |                                               |      |
+      |                                               int    double
+      |                                              %f
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63308	    520	   6536	  70364	  112dc	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+14:46:18 **** Incremental Build of configuration Debug for project Myproject ****
+make -j12 all 
+arm-none-eabi-size  Myproject.elf 
+   text	   data	    bss	    dec	    hex	filename
+  44020	    468	   4132	  48620	   bdec	Myproject.elf
+已结束构建： default.size.stdout
+ 
+14:46:18 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-size  STM32F407VGT6.elf 
+   text	   data	    bss	    dec	    hex	filename
+  63308	    520	   6536	  70364	  112dc	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+14:46:31 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63308	    520	   6536	  70364	  112dc	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+14:49:42 **** Incremental Build of configuration Debug for project Myproject ****
+make -j12 all 
+arm-none-eabi-size  Myproject.elf 
+   text	   data	    bss	    dec	    hex	filename
+  44020	    468	   4132	  48620	   bdec	Myproject.elf
+已结束构建： default.size.stdout
+ 
+14:49:43 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:210:47: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  210 |                   sprintf(message,"distanceR:%d",__HAL_TIM_GetCompare(&htim2,TIM_CHANNEL_1));
+      |                                              ~^
+      |                                               |
+      |                                               int
+      |                                              %ld
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63308	    520	   6536	  70364	  112dc	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+14:49:49 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63308	    520	   6536	  70364	  112dc	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:00:17 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63308	    520	   6536	  70364	  112dc	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:00:54 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63308	    520	   6536	  70364	  112dc	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:03:23 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63308	    520	   6536	  70364	  112dc	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:07:43 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:213:39: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
+  213 |                   sprintf(message,"y:%d",Angle_y);
+      |                                      ~^  ~~~~~~~
+      |                                       |  |
+      |                                       |  double
+      |                                       int
+      |                                      %f
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63316	    520	   6536	  70372	  112e4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:07:52 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:213:40: warning: unknown conversion type character '.' in format [-Wformat=]
+  213 |                   sprintf(message,"y:%..2f",Angle_y);
+      |                                        ^
+../Core/Src/main.c:213:35: warning: too many arguments for format [-Wformat-extra-args]
+  213 |                   sprintf(message,"y:%..2f",Angle_y);
+      |                                   ^~~~~~~~~
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63316	    520	   6536	  70372	  112e4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:08:04 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63316	    520	   6536	  70372	  112e4	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:09:36 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63956	    520	   6536	  71012	  11564	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:11:37 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63956	    520	   6536	  71012	  11564	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:18:53 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-size  STM32F407VGT6.elf 
+   text	   data	    bss	    dec	    hex	filename
+  63956	    520	   6536	  71012	  11564	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+15:18:58 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-size  STM32F407VGT6.elf 
+   text	   data	    bss	    dec	    hex	filename
+  63956	    520	   6536	  71012	  11564	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+15:22:03 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-size  STM32F407VGT6.elf 
+   text	   data	    bss	    dec	    hex	filename
+  63956	    520	   6536	  71012	  11564	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+15:23:36 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63924	    520	   6536	  70980	  11544	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:43:46 **** 构建 of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  63924	    520	   6536	  70980	  11544	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:45:13 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    520	   6536	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:45:57 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    520	   6536	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:50:18 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:54:05 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/UserCC/servo.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/UserCC/servo.d" -MT"Core/UserCC/servo.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/UserCC/servo.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:55:13 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:56:16 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    528	   6528	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+15:56:56 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+16:30:02 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+16:30:25 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+16:30:44 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+16:31:10 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+16:31:27 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+16:31:40 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+16:32:45 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+16:33:30 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:219:44: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  219 |                   sprintf(message,"speedr:%d",__HAL_TIM_GetCompare(&htim12,TIM_CHANNEL_1));
+      |                                           ~^
+      |                                            |
+      |                                            int
+      |                                           %ld
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+16:34:10 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/UserCC/servo.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/UserCC/servo.d" -MT"Core/UserCC/servo.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/UserCC/servo.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+16:34:35 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:219:44: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  219 |                   sprintf(message,"speedr:%d",__HAL_TIM_GetCompare(&htim12,TIM_CHANNEL_1));
+      |                                           ~^
+      |                                            |
+      |                                            int
+      |                                           %ld
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 
+16:37:52 **** Incremental Build of configuration Debug for project STM32F407VGT6 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/UserCC/servo.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/UserCC -I../Core/UserHH -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/UserCC/servo.d" -MT"Core/UserCC/servo.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/UserCC/servo.o"
+arm-none-eabi-gcc -o "STM32F407VGT6.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\git\WYHCODE\PROJECT\STM32F407VGT6\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F407VGT6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+已结束构建目标： STM32F407VGT6.elf
+ 
+arm-none-eabi-size  STM32F407VGT6.elf 
+arm-none-eabi-objdump -h -S STM32F407VGT6.elf  > "STM32F407VGT6.list"
+   text	   data	    bss	    dec	    hex	filename
+  64028	    524	   6532	  71084	  115ac	STM32F407VGT6.elf
+已结束构建： default.size.stdout
+ 
+已结束构建： STM32F407VGT6.list
+ 

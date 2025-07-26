@@ -71,9 +71,9 @@ float Trace_PID_Kd=0;
 float Angle_PID_Kp=.6;
 float Angle_PID_Ki=0.01;
 float Angle_PID_Kd=0.1;
-float Servo_PID_Kp=0.0;
-float Servo_PID_Ki=0.02;
-float Servo_PID_Kd=0;
+float Servo_PID_Kp=0.02;
+float Servo_PID_Ki=0;
+float Servo_PID_Kd=0.02;
 
 	PID PIDL;
 	PID PIDR;
@@ -123,6 +123,8 @@ Trace_PID.target_val=0;
 Angle_PID.target_val=0;
 Servo_PID_Down.target_val=320;
 Servo_PID_Up.target_val=240;
+PIDL.target_val=0;
+PIDR.target_val=0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -156,7 +158,7 @@ Servo_PID_Up.target_val=240;
   MX_USART6_UART_Init();
   MX_TIM3_Init();
   MX_TIM14_Init();
-  MX_USART1_UART_Init();
+  MX_I2C3_Init();
   /* USER CODE BEGIN 2 */
   /*USER Init BEGIN*/
   HAL_Delay(20);
@@ -174,7 +176,7 @@ Servo_PID_Up.target_val=240;
   HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t *)RxBuffer3,sizeof(RxBuffer3));   //开启接受不定长
   __HAL_DMA_DISABLE_IT(huart2.hdmarx, DMA_IT_HT);          //关闭接受半中断
   __HAL_DMA_DISABLE_IT(huart3.hdmarx, DMA_IT_HT);          //关闭接受半中断
-  __HAL_DMA_DISABLE_IT(huart1.hdmarx, DMA_IT_HT);          //关闭接受半中断
+  __HAL_DMA_DISABLE_IT(huart6.hdmarx, DMA_IT_HT);          //关闭接受半中断
 
   HAL_UART_Transmit_DMA(&huart2, JY62_z_Zero, sizeof(JY62_z_Zero));
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
@@ -189,28 +191,32 @@ Servo_PID_Up.target_val=240;
 
   HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
   HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);
-  __HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_2,500);
-  __HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_1,2000);
-  __HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_2,0);
-  __HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_1,0);
-  __HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_3,0);
-    __HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_4,0);
+  __HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_2,50);
+  __HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_1,150);
+//  __HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_2,0);
+//  __HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_1,1000);
+//  __HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_3,0);
+//  __HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_4,0);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	PID_Servo_realize(&Servo_PID_Down,Angle_x);
+	PID_Servo_realize(&Servo_PID_Up,Angle_y);
+	Set_Servo_Angle_Down(Get_Servo_Angle_Down()+Servo_PID_Down.output_val);
+	Set_Servo_Angle_Up(Get_Servo_Angle_Up()+Servo_PID_Up.output_val);
   while (1)
   {
 
 //	  now_angle_down=Get_Servo_Angle_Down();
 //    now_angle_up=Get_Servo_Angle_Up();
-//	Get_Sensor_Trace();
+// 	Get_Sensor_Trace();
 	 OLED_NewFrame();
-		  sprintf(message,"distanceR:%.2f",Angle_y);
+		  sprintf(message,"x:%.2f",Angle_x);
 		  OLED_PrintString(1, 16, message, &font16x16, 0);
-		  sprintf(message,"speedl:%.2f",Angle_x);
+		  sprintf(message,"y:%.2f",Angle_y);
 		  OLED_PrintString(1, 32, message, &font16x16, 0);
-		  sprintf(message,"speedr:%d",speednow2);
+		  sprintf(message,"speedr:%d",__HAL_TIM_GetCompare(&htim12,TIM_CHANNEL_1));
 		  OLED_PrintString(1, 48, message, &font16x16, 0);
 		  OLED_ShowFrame();
 //	      OLED_NewFrame();
@@ -292,12 +298,8 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){ //串
 		        }
 //左边电机PID在线调参
 
-		 if  (sscanf(RxBuffer2, "anglex %f,angley %f", &Angle_x,&Angle_y)== 2){
 
-
-
-		        }
-		 else if (sscanf(RxBuffer2, "speedl %f", &PIDL.target_val)== 1) {
+		  if (sscanf(RxBuffer2, "speedl %f", &PIDL.target_val)== 1) {
 
 
 	         }
@@ -315,10 +317,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){ //串
 
 
 	         }
-//		 if (sscanf(RxBuffer2, "anglex %f", &Angle_x)== 1) {
 
-//
- //        }
 
            //sprintf(message,"RECEIVE:%s\n",RxBuffer2);
            //HAL_UART_Transmit_DMA(&huart6, (uint8_t*)message, strlen(message));
@@ -326,7 +325,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){ //串
 	}
 
 
-	if(huart==&huart2){  //接收JY62 数据中断
+	else if(huart==&huart2){  //接收JY62 数据中断
 		if(RxBuffer[22]==0x55){
 			if(RxBuffer[23]==0x53){
 				RollX = (float)(((short)(RxBuffer[25]<<8)|RxBuffer[24])/32768.0*180);//处理数据，依据官方所给文档
@@ -344,7 +343,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){ //串
 	}
 
 
-	if(huart==&huart3){
+	else if(huart==&huart3){
 		memset(message, 0, sizeof(message));  // 整个数组
 		 if (Size < sizeof(RxBuffer3)) {
 		            RxBuffer3[Size] = '\0';  // 添加字符串结束符
@@ -352,7 +351,14 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){ //串
 		            RxBuffer3[sizeof(RxBuffer3) - 1] = '\0';  // 防止越界
 		        }
 
-//
+		 if  (sscanf(RxBuffer3, "anglex %f,angley %f", &Angle_x,&Angle_y)== 2){
+
+		    	PID_Servo_realize(&Servo_PID_Down,Angle_x);
+		    	PID_Servo_realize(&Servo_PID_Up,Angle_y);
+		    	Set_Servo_Angle_Down(Get_Servo_Angle_Down()+Servo_PID_Down.output_val);
+		    	Set_Servo_Angle_Up(Get_Servo_Angle_Up()+Servo_PID_Up.output_val);
+
+         }
 //		HAL_UART_Transmit_DMA(&huart3, (uint8_t *)RxBuffer3, strlen(RxBuffer3));
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t *)RxBuffer3,sizeof(RxBuffer3));   //开启接受不定长
 
@@ -379,7 +385,7 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {//处理数据发送完
 
 	}
 
-	if(huart == &huart2) {
+	else if(huart == &huart2) {
 
 	     memset(TxBuffer, 0, sizeof(TxBuffer));
 
@@ -392,12 +398,8 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {//处理数据发送完
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
     if(htim==&htim14){
 
-    	//PID_Servo_realize(&Servo_PID_Down,Angle_x);
-    	//PID_Servo_realize(&Servo_PID_Up,Angle_y);
-    	//Set_Servo_Angle_Down(Get_Servo_Angle_Down()+Servo_PID_Down.output_val);
-    	//Set_Servo_Angle_Up(Get_Servo_Angle_Up()+Servo_PID_Up.output_val);
     }
-	if(htim==&htim7){
+    else if(htim==&htim7){
 		speednow=10*(short)__HAL_TIM_GetCounter(&htim3);
 		__HAL_TIM_SetCounter(&htim3,0);
         distance+=speednow/10;
@@ -410,8 +412,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
         PID_Trace_realize(&Trace_PID, Trace_error());
         PID_Angle_realize(&Angle_PID,YawZ);
 
-       // Set_motor_speedL(&PIDL,PIDL.target_val );
-        //Set_motor_speedR(&PIDR,PIDR.target_val );
+        Set_motor_speedL(&PIDL,PIDL.target_val );
+        Set_motor_speedR(&PIDR,PIDR.target_val );
     //    -Trace_PID.output_val-Angle_PID.output_val
 	//	+Trace_PID.output_val+Angle_PID.output_val
 

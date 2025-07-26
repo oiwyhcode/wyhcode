@@ -3,16 +3,18 @@
 
 uint8_t data_read;
 uint8_t Data_Trace[8];
+
+
 uint8_t Read_GPIO(GPIO_TypeDef* port, uint16_t pin) {
     return (HAL_GPIO_ReadPin(port, pin) == GPIO_PIN_SET) ? 1 : 0;
 }
-
+//用GPIO时用到此函数
 
 
 
 void Get_Sensor_Trace(){
 	uint8_t i=0;
- //   HAL_I2C_Master_Receive_IT(&hi2c3, SLAVE_ADDRESS << 1, &data_read, 1);
+    HAL_I2C_Master_Receive_IT(&hi2c3, SLAVE_ADDRESS << 1, &data_read, 1);
     for(i = 0; i < 8; i++)
     {
         // 提取第i位：用 (1 << i) 生成对应位的掩码，与data_read做按位与
@@ -20,7 +22,7 @@ void Get_Sensor_Trace(){
         Data_Trace[i] = (data_read & (1 << i)) ? 1 : 0;
     }
 
-//        HAL_UART_Transmit_DMA(&huart1, &Data_Trace[7], 1);
+     //   HAL_UART_Transmit_DMA(&huart6, &Data_Trace[7], 1);
 
 
 }

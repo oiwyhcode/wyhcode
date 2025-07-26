@@ -1,0 +1,61 @@
+#include "servo.h"
+
+void PID_Servo_init(PID_Servo *pid,float target_val,float Kp,float Ki,float Kd)
+{
+	pid->target_val=target_val;
+	pid->Kp = Kp;
+	pid->Ki = Ki;
+	pid->Kd = Kd;
+}
+
+void Set_Servo_Angle_Down(uint16_t pwm){
+	 if(pwm>170) pwm=170;
+	 if(pwm<50) pwm=50;
+	__HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_1,pwm);
+}
+
+void Set_Servo_Angle_Up(uint16_t pwm){
+
+	 if(pwm>120) pwm=120;
+	 if(pwm<50) pwm=50;
+
+	__HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_2,pwm);
+}
+
+
+
+float Get_Servo_Angle_Down(){
+	float Angle = __HAL_TIM_GET_COMPARE(&htim12,TIM_CHANNEL_1);
+	    // 核心转换公式
+//	    float Angle = ( (__HAL_TIM_GET_COMPARE(&htim12,TIM_CHANNEL_1) - 50) / 200.0f ) * 270.0f;
+	    return Angle;
+
+}
+float Get_Servo_Angle_Up(){
+    // 核心转换公式
+    float Angle =__HAL_TIM_GET_COMPARE(&htim12,TIM_CHANNEL_2);
+    return Angle;
+
+
+}
+void PID_Servo_realize(PID_Servo *pid, float CurrentAngle) {
+    // 1. 计算当前误差
+    pid->Error = pid->target_val - CurrentAngle;
+
+    // 2. 计算积分项 (带积分限幅，防止积分饱和)
+    pid->integral += pid->Error;
+    if (pid->integral > 100) pid->integral = 100;
+    if (pid->integral < -100) pid->integral = -100;
+
+    // 3. 计算微分项
+    float derivative = pid->Error - pid->LastError;
+
+    // 4. 计算总输出
+    pid->output_val = (pid->Kp * pid->Error) +
+                  (pid->Ki * pid->integral) +
+                  (pid->Kd * derivative);
+    if (pid->output_val > 250) pid->output_val = 250;
+    if (pid->output_val < -250) pid->output_val = -250;
+    // 5. 更新上次误差
+    pid->LastError = pid->Error;
+}

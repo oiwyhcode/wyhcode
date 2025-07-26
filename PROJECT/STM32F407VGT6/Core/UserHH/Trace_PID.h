@@ -5,8 +5,8 @@
 #define SLAVE_ADDRESS 0x12// 从设备地址
 #define REGISTER_ADDRESS 0x30  // 寄存器地址
 
-extern I2C_HandleTypeDef hi2c3;//
-extern UART_HandleTypeDef huart1;//
+extern I2C_HandleTypeDef hi2c3;
+//extern UART_HandleTypeDef huart6;
 typedef struct {
     float Kp;
     float Ki;
