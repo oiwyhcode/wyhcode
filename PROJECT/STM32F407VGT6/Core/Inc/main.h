@@ -101,6 +101,10 @@ void Error_Handler(void);
 #define OUT7_GPIO_Port GPIOE
 #define OUT8_Pin GPIO_PIN_15
 #define OUT8_GPIO_Port GPIOE
+#define KEY4_Pin GPIO_PIN_12
+#define KEY4_GPIO_Port GPIOB
+#define KEY3_Pin GPIO_PIN_13
+#define KEY3_GPIO_Port GPIOB
 #define SERVO_PWM2_Pin GPIO_PIN_14
 #define SERVO_PWM2_GPIO_Port GPIOB
 #define SERVO_PWM1_Pin GPIO_PIN_15

@@ -73,24 +73,122 @@ extern "C" {
 #define POWER_STARTUP_DELAY                                                (16)
 
 
+
 #define CPUCLK_FREQ                                                     32000000
 
 
 
+/* Defines for PWM_MOTOR */
+#define PWM_MOTOR_INST                                                     TIMG8
+#define PWM_MOTOR_INST_IRQHandler                               TIMG8_IRQHandler
+#define PWM_MOTOR_INST_INT_IRQN                                 (TIMG8_INT_IRQn)
+#define PWM_MOTOR_INST_CLK_FREQ                                          4000000
+/* GPIO defines for channel 0 */
+#define GPIO_PWM_MOTOR_C0_PORT                                             GPIOA
+#define GPIO_PWM_MOTOR_C0_PIN                                     DL_GPIO_PIN_26
+#define GPIO_PWM_MOTOR_C0_IOMUX                                  (IOMUX_PINCM59)
+#define GPIO_PWM_MOTOR_C0_IOMUX_FUNC                 IOMUX_PINCM59_PF_TIMG8_CCP0
+#define GPIO_PWM_MOTOR_C0_IDX                                DL_TIMER_CC_0_INDEX
+/* GPIO defines for channel 1 */
+#define GPIO_PWM_MOTOR_C1_PORT                                             GPIOA
+#define GPIO_PWM_MOTOR_C1_PIN                                     DL_GPIO_PIN_27
+#define GPIO_PWM_MOTOR_C1_IOMUX                                  (IOMUX_PINCM60)
+#define GPIO_PWM_MOTOR_C1_IOMUX_FUNC                 IOMUX_PINCM60_PF_TIMG8_CCP1
+#define GPIO_PWM_MOTOR_C1_IDX                                DL_TIMER_CC_1_INDEX
 
-/* Defines for I2C_OLED */
-#define I2C_OLED_INST                                                       I2C0
-#define I2C_OLED_INST_IRQHandler                                 I2C0_IRQHandler
-#define I2C_OLED_INST_INT_IRQN                                     I2C0_INT_IRQn
-#define I2C_OLED_BUS_SPEED_HZ                                             100000
-#define GPIO_I2C_OLED_SDA_PORT                                             GPIOA
-#define GPIO_I2C_OLED_SDA_PIN                                      DL_GPIO_PIN_0
-#define GPIO_I2C_OLED_IOMUX_SDA                                   (IOMUX_PINCM1)
-#define GPIO_I2C_OLED_IOMUX_SDA_FUNC                    IOMUX_PINCM1_PF_I2C0_SDA
-#define GPIO_I2C_OLED_SCL_PORT                                             GPIOA
-#define GPIO_I2C_OLED_SCL_PIN                                      DL_GPIO_PIN_1
-#define GPIO_I2C_OLED_IOMUX_SCL                                   (IOMUX_PINCM2)
-#define GPIO_I2C_OLED_IOMUX_SCL_FUNC                    IOMUX_PINCM2_PF_I2C0_SCL
+
+
+/* Defines for TIMER_0 */
+#define TIMER_0_INST                                                     (TIMG0)
+#define TIMER_0_INST_IRQHandler                                 TIMG0_IRQHandler
+#define TIMER_0_INST_INT_IRQN                                   (TIMG0_INT_IRQn)
+#define TIMER_0_INST_LOAD_VALUE                                          (1999U)
+
+
+
+
+/* Defines for I2C_0 */
+#define I2C_0_INST                                                          I2C0
+#define I2C_0_INST_IRQHandler                                    I2C0_IRQHandler
+#define I2C_0_INST_INT_IRQN                                        I2C0_INT_IRQn
+#define I2C_0_BUS_SPEED_HZ                                                400000
+#define GPIO_I2C_0_SDA_PORT                                                GPIOA
+#define GPIO_I2C_0_SDA_PIN                                         DL_GPIO_PIN_0
+#define GPIO_I2C_0_IOMUX_SDA                                      (IOMUX_PINCM1)
+#define GPIO_I2C_0_IOMUX_SDA_FUNC                       IOMUX_PINCM1_PF_I2C0_SDA
+#define GPIO_I2C_0_SCL_PORT                                                GPIOA
+#define GPIO_I2C_0_SCL_PIN                                         DL_GPIO_PIN_1
+#define GPIO_I2C_0_IOMUX_SCL                                      (IOMUX_PINCM2)
+#define GPIO_I2C_0_IOMUX_SCL_FUNC                       IOMUX_PINCM2_PF_I2C0_SCL
+
+/* Defines for I2C_TRACE */
+#define I2C_TRACE_INST                                                      I2C1
+#define I2C_TRACE_INST_IRQHandler                                I2C1_IRQHandler
+#define I2C_TRACE_INST_INT_IRQN                                    I2C1_INT_IRQn
+#define GPIO_I2C_TRACE_SDA_PORT                                            GPIOA
+#define GPIO_I2C_TRACE_SDA_PIN                                    DL_GPIO_PIN_16
+#define GPIO_I2C_TRACE_IOMUX_SDA                                 (IOMUX_PINCM38)
+#define GPIO_I2C_TRACE_IOMUX_SDA_FUNC                  IOMUX_PINCM38_PF_I2C1_SDA
+#define GPIO_I2C_TRACE_SCL_PORT                                            GPIOA
+#define GPIO_I2C_TRACE_SCL_PIN                                    DL_GPIO_PIN_15
+#define GPIO_I2C_TRACE_IOMUX_SCL                                 (IOMUX_PINCM37)
+#define GPIO_I2C_TRACE_IOMUX_SCL_FUNC                  IOMUX_PINCM37_PF_I2C1_SCL
+
+
+/* Defines for UART_0 */
+#define UART_0_INST                                                        UART0
+#define UART_0_INST_FREQUENCY                                            4000000
+#define UART_0_INST_IRQHandler                                  UART0_IRQHandler
+#define UART_0_INST_INT_IRQN                                      UART0_INT_IRQn
+#define GPIO_UART_0_RX_PORT                                                GPIOA
+#define GPIO_UART_0_TX_PORT                                                GPIOA
+#define GPIO_UART_0_RX_PIN                                        DL_GPIO_PIN_11
+#define GPIO_UART_0_TX_PIN                                        DL_GPIO_PIN_10
+#define GPIO_UART_0_IOMUX_RX                                     (IOMUX_PINCM22)
+#define GPIO_UART_0_IOMUX_TX                                     (IOMUX_PINCM21)
+#define GPIO_UART_0_IOMUX_RX_FUNC                      IOMUX_PINCM22_PF_UART0_RX
+#define GPIO_UART_0_IOMUX_TX_FUNC                      IOMUX_PINCM21_PF_UART0_TX
+#define UART_0_BAUD_RATE                                                  (9600)
+#define UART_0_IBRD_4_MHZ_9600_BAUD                                         (26)
+#define UART_0_FBRD_4_MHZ_9600_BAUD                                          (3)
+
+
+
+
+
+/* Port definition for Pin Group motorA */
+#define motorA_PORT                                                      (GPIOB)
+
+/* Defines for PIN_0: GPIOB.13 with pinCMx 30 on package pin 1 */
+#define motorA_PIN_0_PIN                                        (DL_GPIO_PIN_13)
+#define motorA_PIN_0_IOMUX                                       (IOMUX_PINCM30)
+/* Defines for PIN_1: GPIOB.12 with pinCMx 29 on package pin 64 */
+#define motorA_PIN_1_PIN                                        (DL_GPIO_PIN_12)
+#define motorA_PIN_1_IOMUX                                       (IOMUX_PINCM29)
+/* Port definition for Pin Group motorB */
+#define motorB_PORT                                                      (GPIOB)
+
+/* Defines for PIN_2: GPIOB.14 with pinCMx 31 on package pin 2 */
+#define motorB_PIN_2_PIN                                        (DL_GPIO_PIN_14)
+#define motorB_PIN_2_IOMUX                                       (IOMUX_PINCM31)
+/* Defines for PIN_3: GPIOB.15 with pinCMx 32 on package pin 3 */
+#define motorB_PIN_3_PIN                                        (DL_GPIO_PIN_15)
+#define motorB_PIN_3_IOMUX                                       (IOMUX_PINCM32)
+/* Port definition for Pin Group ENCODERL */
+#define ENCODERL_PORT                                                    (GPIOB)
+
+/* Defines for PIN_4: GPIOB.17 with pinCMx 43 on package pin 14 */
+// pins affected by this interrupt request:["PIN_4"]
+#define ENCODERL_INT_IRQN                                       (GPIOB_INT_IRQn)
+#define ENCODERL_INT_IIDX                       (DL_INTERRUPT_GROUP1_IIDX_GPIOB)
+#define ENCODERL_PIN_4_IIDX                                 (DL_GPIO_IIDX_DIO17)
+#define ENCODERL_PIN_4_PIN                                      (DL_GPIO_PIN_17)
+#define ENCODERL_PIN_4_IOMUX                                     (IOMUX_PINCM43)
+/* Defines for PIN_5: GPIOB.18 with pinCMx 44 on package pin 15 */
+#define ENCODERL_PIN_5_PIN                                      (DL_GPIO_PIN_18)
+#define ENCODERL_PIN_5_IOMUX                                     (IOMUX_PINCM44)
+
+
 
 /* clang-format on */
 
@@ -98,8 +196,16 @@ void SYSCFG_DL_init(void);
 void SYSCFG_DL_initPower(void);
 void SYSCFG_DL_GPIO_init(void);
 void SYSCFG_DL_SYSCTL_init(void);
-void SYSCFG_DL_I2C_OLED_init(void);
+void SYSCFG_DL_PWM_MOTOR_init(void);
+void SYSCFG_DL_TIMER_0_init(void);
+void SYSCFG_DL_I2C_0_init(void);
+void SYSCFG_DL_I2C_TRACE_init(void);
+void SYSCFG_DL_UART_0_init(void);
 
+
+
+bool SYSCFG_DL_saveConfiguration(void);
+bool SYSCFG_DL_restoreConfiguration(void);
 
 #ifdef __cplusplus
 }

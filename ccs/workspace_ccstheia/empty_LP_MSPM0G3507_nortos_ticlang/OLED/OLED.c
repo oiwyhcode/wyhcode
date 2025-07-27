@@ -1,5 +1,5 @@
 #include "OLED.h"
-#include "stdlib.h"
+ #include "stdlib.h"
 #define OLED_ADDR 0x3C
 
 // OLED参数
@@ -49,22 +49,22 @@ int OLED_WriteByte(uint8_t addr,uint8_t data)
   buff[1] = data;
   /* Wait for I2C to be Idle */
   while (!( 
-            DL_I2C_getControllerStatus(I2C_OLED_INST) & DL_I2C_CONTROLLER_STATUS_IDLE))
+            DL_I2C_getControllerStatus(I2C_0_INST) & DL_I2C_CONTROLLER_STATUS_IDLE))
             ;
 
         /* Send the packet to the controller.
          * This function will send Start + Stop automatically.
          */
-        DL_I2C_startControllerTransfer(I2C_OLED_INST, OLED_ADDR,
+        DL_I2C_startControllerTransfer(I2C_0_INST, OLED_ADDR,
             DL_I2C_CONTROLLER_DIRECTION_TX, 2);
-        DL_I2C_fillControllerTXFIFO(I2C_OLED_INST, &buff[0], 2);
+        DL_I2C_fillControllerTXFIFO(I2C_0_INST, &buff[0], 2);
       /* Poll until the Controller writes all bytes */
-      while (DL_I2C_getControllerStatus(I2C_OLED_INST) &
+      while (DL_I2C_getControllerStatus(I2C_0_INST) &
                      DL_I2C_CONTROLLER_STATUS_BUSY_BUS)
                   ;
 
       /* Trap if there was an error */
-      if (DL_I2C_getControllerStatus(I2C_OLED_INST) &
+      if (DL_I2C_getControllerStatus(I2C_0_INST) &
           DL_I2C_CONTROLLER_STATUS_ERROR) {
           /* LED will remain high if there is an error */
           __BKPT(0);

@@ -126,4 +126,6 @@ GEN_OPTS__QUOTED :=
 SUBDIRS := \
 . \
 OLED \
+soft \
+usercc \
 

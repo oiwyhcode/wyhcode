@@ -1,0 +1,22 @@
+{
+  "folders": [
+    {
+      "path": "workspace_ccstheia/empty_LP_MSPM0G3507_nortos_ticlang"
+    }
+  ],
+  "settings": {},
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "MSPM0",
+        "type": "ccs-debug",
+        "request": "launch",
+        "projectInfo": {
+          "name": "MSPM0",
+          "resourceId": "/MSPM0"
+        }
+      }
+    ]
+  }
+}
