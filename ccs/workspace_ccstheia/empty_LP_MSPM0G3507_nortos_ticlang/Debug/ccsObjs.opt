@@ -3,10 +3,9 @@
 "./startup_mspm0g350x_ticlang.o"
 "./OLED/OLED.o"
 "./OLED/font.o"
-"./soft/gpio.o"
-"./soft/tim.o"
 "./soft/uart.o"
 "./usercc/PID_Speed.o"
+"./usercc/Trace.o"
 "./usercc/delay.o"
 -l"./device_linker.cmd"
 -ldevice.cmd.genlibs

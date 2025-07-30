@@ -15,10 +15,9 @@ ORDERED_OBJS += \
 "./startup_mspm0g350x_ticlang.o" \
 "./OLED/OLED.o" \
 "./OLED/font.o" \
-"./soft/gpio.o" \
-"./soft/tim.o" \
 "./soft/uart.o" \
 "./usercc/PID_Speed.o" \
+"./usercc/Trace.o" \
 "./usercc/delay.o" \
 $(GEN_CMDS__FLAG) \
 -Wl,-ldevice.cmd.genlibs \
@@ -156,8 +155,8 @@ empty_LP_MSPM0G3507_nortos_ticlang.out: $(OBJS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "empty.o" "ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "OLED\OLED.o" "OLED\font.o" "soft\gpio.o" "soft\tim.o" "soft\uart.o" "usercc\PID_Speed.o" "usercc\delay.o" 
-	-$(RM) "empty.d" "ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "OLED\OLED.d" "OLED\font.d" "soft\gpio.d" "soft\tim.d" "soft\uart.d" "usercc\PID_Speed.d" "usercc\delay.d" 
+	-$(RM) "empty.o" "ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "OLED\OLED.o" "OLED\font.o" "soft\uart.o" "usercc\PID_Speed.o" "usercc\Trace.o" "usercc\delay.o" 
+	-$(RM) "empty.d" "ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "OLED\OLED.d" "OLED\font.d" "soft\uart.d" "usercc\PID_Speed.d" "usercc\Trace.d" "usercc\delay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

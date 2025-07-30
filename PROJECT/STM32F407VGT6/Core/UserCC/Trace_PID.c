@@ -5,9 +5,9 @@ uint8_t data_read;
 uint8_t Data_Trace[8];
 
 
-uint8_t Read_GPIO(GPIO_TypeDef* port, uint16_t pin) {
-    return (HAL_GPIO_ReadPin(port, pin) == GPIO_PIN_SET) ? 1 : 0;
-}
+//uint8_t Read_GPIO(GPIO_TypeDef* port, uint16_t pin) {
+//    return (HAL_GPIO_ReadPin(port, pin) == GPIO_PIN_SET) ? 1 : 0;
+//}
 //用GPIO时用到此函数
 
 

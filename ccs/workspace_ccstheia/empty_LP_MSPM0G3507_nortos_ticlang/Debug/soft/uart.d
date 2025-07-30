@@ -74,7 +74,8 @@ soft/uart.o: ../soft/uart.c ../soft/uart.h \
  A:/CCS/mspm0_sdk_2_05_01_00/source/ti/driverlib/dl_vref.h \
  A:/CCS/mspm0_sdk_2_05_01_00/source/ti/driverlib/dl_wwdt.h \
  A:/CCS/mspm0_sdk_2_05_01_00/source/ti/driverlib/m0p/dl_interrupt.h \
- A:/CCS/mspm0_sdk_2_05_01_00/source/ti/driverlib/m0p/dl_systick.h
+ A:/CCS/mspm0_sdk_2_05_01_00/source/ti/driverlib/m0p/dl_systick.h \
+ A:/git/WYHCODE/ccs/workspace_ccstheia/empty_LP_MSPM0G3507_nortos_ticlang/userhh/PID_speed.h
 ../soft/uart.h:
 ti_msp_dl_config.h:
 A:/CCS/mspm0_sdk_2_05_01_00/source/ti/devices/msp/msp.h:
@@ -150,3 +151,4 @@ A:/CCS/mspm0_sdk_2_05_01_00/source/ti/driverlib/dl_vref.h:
 A:/CCS/mspm0_sdk_2_05_01_00/source/ti/driverlib/dl_wwdt.h:
 A:/CCS/mspm0_sdk_2_05_01_00/source/ti/driverlib/m0p/dl_interrupt.h:
 A:/CCS/mspm0_sdk_2_05_01_00/source/ti/driverlib/m0p/dl_systick.h:
+A:/git/WYHCODE/ccs/workspace_ccstheia/empty_LP_MSPM0G3507_nortos_ticlang/userhh/PID_speed.h:

@@ -36,6 +36,7 @@
 #include "Angle_PID.h"
 #include "US_100.h"
 #include "servo.h"
+#include "math.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -191,8 +192,8 @@ PIDR.target_val=0;
 
   HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
   HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);
-  __HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_2,50);
-  __HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_1,150);
+//  __HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_2,1010);
+//  __HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_1,1000);
 //  __HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_2,0);
 //  __HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_1,1000);
 //  __HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_3,0);
@@ -201,24 +202,18 @@ PIDR.target_val=0;
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	PID_Servo_realize(&Servo_PID_Down,Angle_x);
-	PID_Servo_realize(&Servo_PID_Up,Angle_y);
-	Set_Servo_Angle_Down(Get_Servo_Angle_Down()+Servo_PID_Down.output_val);
-	Set_Servo_Angle_Up(Get_Servo_Angle_Up()+Servo_PID_Up.output_val);
-  while (1)
-  {
+//	PID_Servo_realize(&Servo_PID_Down,Angle_x);
+//	PID_Servo_realize(&Servo_PID_Up,Angle_y);
+//	Set_Servo_Angle_Down(Get_Servo_Angle_Down()+Servo_PID_Down.output_val);
+//	Set_Servo_Angle_Up(Get_Servo_Angle_Up()+Servo_PID_Up.output_val);
+  Set_Servo_Angle(0, 90.0f);
+  Set_Servo_Angle(1, 90.0f);
+  HAL_Delay(1000);
 
-//	  now_angle_down=Get_Servo_Angle_Down();
-//    now_angle_up=Get_Servo_Angle_Up();
+  while (1)
+  {Draw_Rectangle();
 // 	Get_Sensor_Trace();
-	 OLED_NewFrame();
-		  sprintf(message,"x:%.2f",Angle_x);
-		  OLED_PrintString(1, 16, message, &font16x16, 0);
-		  sprintf(message,"y:%.2f",Angle_y);
-		  OLED_PrintString(1, 32, message, &font16x16, 0);
-		  sprintf(message,"speedr:%d",__HAL_TIM_GetCompare(&htim12,TIM_CHANNEL_1));
-		  OLED_PrintString(1, 48, message, &font16x16, 0);
-		  OLED_ShowFrame();
+
 //	      OLED_NewFrame();
 //	  sprintf(message,"DDD:%.2dcm",Trace_error());
 //    OLED_PrintString(1, 16, message, &font16x16, 0);//八路循迹I2C调试专用
@@ -353,10 +348,10 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){ //串
 
 		 if  (sscanf(RxBuffer3, "anglex %f,angley %f", &Angle_x,&Angle_y)== 2){
 
-		    	PID_Servo_realize(&Servo_PID_Down,Angle_x);
-		    	PID_Servo_realize(&Servo_PID_Up,Angle_y);
-		    	Set_Servo_Angle_Down(Get_Servo_Angle_Down()+Servo_PID_Down.output_val);
-		    	Set_Servo_Angle_Up(Get_Servo_Angle_Up()+Servo_PID_Up.output_val);
+//		    	PID_Servo_realize(&Servo_PID_Down,Angle_x);
+//		    	PID_Servo_realize(&Servo_PID_Up,Angle_y);
+//		    	Set_Servo_Angle_Down(Get_Servo_Angle_Down()+Servo_PID_Down.output_val);
+//		    	Set_Servo_Angle_Up(Get_Servo_Angle_Up()+Servo_PID_Up.output_val);
 
          }
 //		HAL_UART_Transmit_DMA(&huart3, (uint8_t *)RxBuffer3, strlen(RxBuffer3));
@@ -397,6 +392,14 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {//处理数据发送完
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
     if(htim==&htim14){
+    	OLED_NewFrame();
+	 sprintf(message,"x:%.2f",Get_Servo_Angle_Up());
+	 OLED_PrintString(1, 16, message, &font16x16, 0);
+    sprintf(message,"y:%.2f",Get_Servo_Angle_Down());
+	 OLED_PrintString(1, 32, message, &font16x16, 0);
+	 sprintf(message,"speedr:%ld",__HAL_TIM_GetCompare(&htim12,TIM_CHANNEL_1));
+	 OLED_PrintString(1, 48, message, &font16x16, 0);
+	 OLED_ShowFrame();
 
     }
     else if(htim==&htim7){

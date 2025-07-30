@@ -1,0 +1,329 @@
+#include "servo.h"
+#include "math.h"
+#include "define.h"
+
+
+// 绘制三角形
+void Draw_Triangle(void) {
+    // 计算三角形三个顶点的坐标（等边三角形）
+    float vertices[3][2];
+
+    // 计算三个顶点的角度（120度间隔）
+    for (int i = 0; i < 3; i++) {
+        float angle = i * 2 * M_PI / 3 - M_PI/2;  // 从顶部开始，逆时针排列
+        float x = TRIANGLE_CENTER_X + TRIANGLE_SIZE * cos(angle);
+        float y = TRIANGLE_CENTER_Y + TRIANGLE_SIZE * sin(angle);
+        vertices[i][0] = x;
+        vertices[i][1] = y;
+    }
+
+    // 连接三个顶点形成三角形
+    for (int i = 0; i < 3; i++) {
+        float startX = vertices[i][0];
+        float startY = vertices[i][1];
+        float endX = vertices[(i+1) % 3][0];  // 连接到下一个顶点（循环）
+        float endY = vertices[(i+1) % 3][1];
+
+        // 在两个顶点之间插值，形成平滑线段
+        for (int j = 0; j <= TRIANGLE_SEGMENTS; j++) {
+            float t = (float)j / TRIANGLE_SEGMENTS;
+            float x = startX + t * (endX - startX);
+            float y = startY + t * (endY - startY);
+
+            // 限制角度范围
+            x = (x < 0) ? 0 : (x > 270) ? 270 : x;
+            y = (y < 0) ? 0 : (y > 270) ? 270 : y;
+
+            // 设置舵机角度
+            Set_Servo_Angle(0, x);
+            Set_Servo_Angle(1, y);
+
+            // 控制移动速度
+            HAL_Delay(TRIANGLE_SPEED);
+        }
+    }
+}
+// 绘制五角星
+void Draw_Star(void) {
+    // 预计算五角星的10个顶点（5个外顶点和5个内顶点）
+    float vertices[10][2];  // 存储10个顶点的坐标
+
+    // 计算10个顶点的位置（角度间隔为36度）
+    for (int i = 0; i < 10; i++) {
+        // 计算当前顶点的角度（弧度制）
+        float angle = i * 2 * M_PI / 10 - M_PI/2;  // 从顶部开始，顺时针排列
+
+        // 交替使用外半径和内半径
+        float radius = (i % 2 == 0) ? STAR_OUTER_RADIUS : STAR_INNER_RADIUS;
+
+        // 计算顶点坐标（相对于中心点）
+        float x = STAR_CENTER_X + radius * cos(angle);
+        float y = STAR_CENTER_Y + radius * sin(angle);
+
+        // 存储顶点坐标
+        vertices[i][0] = x;
+        vertices[i][1] = y;
+    }
+
+    // 绘制五角星（连接10个顶点形成闭合图形）
+    for (int i = 0; i < 10; i++) {
+        float startX = vertices[i][0];
+        float startY = vertices[i][1];
+        float endX = vertices[(i+1) % 10][0];  // 连接到下一个顶点（循环）
+        float endY = vertices[(i+1) % 10][1];
+
+        // 在两个顶点之间插值，形成平滑线段
+        for (int j = 0; j <= STAR_SEGMENT_POINTS; j++) {
+            // 计算当前插值点的位置
+            float t = (float)j / STAR_SEGMENT_POINTS;
+            float x = startX + t * (endX - startX);
+            float y = startY + t * (endY - startY);
+
+            // 限制角度范围
+            x = (x < 0) ? 0 : (x > 270) ? 270 : x;
+            y = (y < 0) ? 0 : (y > 270) ? 270 : y;
+
+            // 设置舵机角度
+            Set_Servo_Angle(0, x);
+            Set_Servo_Angle(1, y);
+
+            // 控制移动速度
+            HAL_Delay(STAR_SPEED);
+        }
+    }
+}
+// 绘制正弦函数
+void Draw_SineWave(void) {
+    for (int i = 0; i < SIN_POINT_COUNT; i++) {
+        // 计算当前点在水平方向的位置（0到SIN_HORIZONTAL_RANGE）
+        float x_pos = (float)i / (SIN_POINT_COUNT - 1) * SIN_HORIZONTAL_RANGE;
+
+        // 计算对应的水平舵机角度
+        float x_angle = SIN_CENTER_X + x_pos - SIN_HORIZONTAL_RANGE / 2;
+
+        // 计算垂直舵机角度（基于正弦函数）
+        // 角度 = 中心位置 + 振幅 * sin(2π * 频率 * 当前进度)
+        float y_angle = SIN_START_Y + SIN_AMPLITUDE * sin(2.0f * M_PI * SIN_FREQUENCY * (float)i / (SIN_POINT_COUNT - 1));
+
+        // 限制角度范围
+        x_angle = (x_angle < 0) ? 0 : (x_angle > 270) ? 270 : x_angle;
+        y_angle = (y_angle < 0) ? 0 : (y_angle > 270) ? 270 : y_angle;
+
+        // 设置舵机角度
+        Set_Servo_Angle(0, x_angle);  // 水平舵机
+        Set_Servo_Angle(1, y_angle);  // 垂直舵机
+
+        // 控制移动速度
+        HAL_Delay(SIN_SPEED);
+    }
+}
+
+void Draw_Circle(void) {
+    for(int i = 0; i < POINT_COUNT; i++) {
+        float theta = 2 * M_PI * i / POINT_COUNT;
+
+        // 计算圆上点的坐标
+        float x_angle = CENTER_X + CIRCLE_RADIUS * cos(theta);
+        float y_angle = CENTER_Y + CIRCLE_RADIUS * sin(theta);
+
+        // 限制角度范围
+        x_angle = (x_angle < 0) ? 0 : (x_angle > 270) ? 270 : x_angle;
+        y_angle = (y_angle < 0) ? 0 : (y_angle > 270) ? 270 : y_angle;
+
+        // 更新舵机位置
+        Set_Servo_Angle(0, x_angle);  // 水平
+        Set_Servo_Angle(1, y_angle);  // 垂直
+
+        // 控制移动速度 (约100ms/点)
+        HAL_Delay(20);
+    }
+}
+// 矩形参数定义（可根据需要调整）
+#define RECT_CENTER_X     90.0f   // 矩形中心X坐标
+#define RECT_CENTER_Y     90.0f   // 矩形中心Y坐标
+#define RECT_WIDTH        80.0f   // 矩形宽度（水平方向角度范围）
+#define RECT_HEIGHT       60.0f   // 矩形高度（垂直方向角度范围）
+#define RECT_SPEED        10      // 每点延时（ms），控制绘制速度
+#define RECT_SEGMENTS     30      // 每条边的插值点数（越大越平滑）
+
+// 矩形参数（可直接修改）
+#define RECT_LEFT      60.0f    // 左边X坐标（水平角度）
+#define RECT_RIGHT    120.0f    // 右边X坐标（水平角度）
+#define RECT_TOP       70.0f    // 上边Y坐标（垂直角度）
+#define RECT_BOTTOM    110.0f   // 下边Y坐标（垂直角度）
+#define STEP_ANGLE     0.5f     // 每步移动角度（越小越平滑）
+#define MOVE_DELAY     5        // 每步延时（ms，控制速度）
+
+// 绘制直线（水平方向：Y固定，只动X）
+static void Draw_Line_Horizontal(float y, float x_start, float x_end) {
+    // 确定移动方向（从左到右或从右到左）
+    float step = (x_end > x_start) ? STEP_ANGLE : -STEP_ANGLE;
+    // 计算总步数（确保能到达终点）
+    int total_steps = (int)(fabs(x_end - x_start) / STEP_ANGLE) + 1;
+
+    for (int i = 0; i < total_steps; i++) {
+        // 当前X角度（最后一步强制到达终点，避免累积误差）
+        float current_x = (i == total_steps - 1) ? x_end : x_start + step * i;
+        // Y角度严格固定
+        float current_y = y;
+
+        // 限制角度在有效范围
+        current_x = (current_x < 0) ? 0 : (current_x > 270) ? 270 : current_x;
+        current_y = (current_y < 0) ? 0 : (current_y > 270) ? 270 : current_y;
+
+        // 只更新水平舵机角度，垂直舵机角度不变
+        Set_Servo_Angle(0, current_x);
+        // 每次都设置垂直舵机（防止意外变动，但实际值不变）
+        Set_Servo_Angle(1, current_y);
+
+        // 等待舵机到位
+        HAL_Delay(MOVE_DELAY);
+    }
+}
+
+// 绘制直线（垂直方向：X固定，只动Y）
+static void Draw_Line_Vertical(float x, float y_start, float y_end) {
+    // 确定移动方向（从上到下或从下到上）
+    float step = (y_end > y_start) ? STEP_ANGLE : -STEP_ANGLE;
+    // 计算总步数
+    int total_steps = (int)(fabs(y_end - y_start) / STEP_ANGLE) + 1;
+
+    for (int i = 0; i < total_steps; i++) {
+        // 当前Y角度（最后一步强制到达终点）
+        float current_y = (i == total_steps - 1) ? y_end : y_start + step * i;
+        // X角度严格固定
+        float current_x = x;
+
+        // 限制角度范围
+        current_x = (current_x < 0) ? 0 : (current_x > 270) ? 270 : current_x;
+        current_y = (current_y < 0) ? 0 : (current_y > 270) ? 270 : current_y;
+
+        // 只更新垂直舵机角度，水平舵机角度不变
+        Set_Servo_Angle(0, current_x);
+        Set_Servo_Angle(1, current_y);
+
+        // 等待舵机到位
+        HAL_Delay(MOVE_DELAY);
+    }
+}
+
+// 绘制矩形（按顺序绘制四条边，形成闭合图形）
+void Draw_Rectangle(void) {
+    // 1. 上边：从左上角→右上角（水平移动，Y固定为TOP）
+    Draw_Line_Horizontal(RECT_TOP, RECT_LEFT, RECT_RIGHT);
+
+    // 2. 右边：从右上角→右下角（垂直移动，X固定为RIGHT）
+    Draw_Line_Vertical(RECT_RIGHT, RECT_TOP, RECT_BOTTOM);
+
+    // 3. 下边：从右下角→左下角（水平移动，Y固定为BOTTOM）
+    Draw_Line_Horizontal(RECT_BOTTOM, RECT_RIGHT, RECT_LEFT);
+
+    // 4. 左边：从左下角→左上角（垂直移动，X固定为LEFT）
+    Draw_Line_Vertical(RECT_LEFT, RECT_BOTTOM, RECT_TOP);
+}
+//void Draw_Rectangle(void) {
+//    // 计算矩形四个顶点的坐标（相对于中心点）
+//    float left = RECT_CENTER_X - RECT_WIDTH / 2;
+//    float right = RECT_CENTER_X + RECT_WIDTH / 2;
+//    float top = RECT_CENTER_Y - RECT_HEIGHT / 2;
+//    float bottom = RECT_CENTER_Y + RECT_HEIGHT / 2;
+//
+//    // 定义矩形的四个顶点（顺时针顺序：左上→右上→右下→左下→左上）
+//    float vertices[5][2] = {
+//        {left, top},     // 左上
+//        {right, top},    // 右上
+//        {right, bottom}, // 右下
+//        {left, bottom},  // 左下
+//        {left, top}      // 返回起点闭合
+//    };
+//
+//    // 顶点间的分段点数（越大线条越平滑）
+//    const int segmentPoints = 30;
+//
+//    // 绘制矩形
+//    for (int i = 0; i < 4; i++) {
+//        float startX = vertices[i][0];
+//        float startY = vertices[i][1];
+//        float endX = vertices[i+1][0];
+//        float endY = vertices[i+1][1];
+//
+//        // 在两个顶点之间插值，形成平滑线段
+//        for (int j = 0; j <= segmentPoints; j++) {
+//            // 计算当前插值点的位置
+//            float t = (float)j / segmentPoints;
+//            float x = startX + t * (endX - startX);
+//            float y = startY + t * (endY - startY);
+//
+//            // 限制角度范围
+//            x = (x < 0) ? 0 : (x > 270) ? 270 : x;
+//            y = (y < 0) ? 0 : (y > 270) ? 270 : y;
+//
+//            // 设置舵机角度
+//            Set_Servo_Angle(0, x);
+//            Set_Servo_Angle(1, y);
+//
+//            // 控制移动速度
+//            HAL_Delay(RECT_SPEED);
+//        }
+//    }
+//}
+
+void Set_Servo_Angle(uint8_t servo_id, float angle) {
+    uint16_t pulse = MIN_PULSE + (uint16_t)((MAX_PULSE - MIN_PULSE) * angle / ANGLE_RANGE);
+
+    switch(servo_id) {
+        case 0:  // 水平舵机 (TIM3_CH1)
+            TIM12->CCR1 = pulse;
+            break;
+        case 1:  // 垂直舵机 (TIM3_CH2)
+            TIM12->CCR2 = pulse;
+            break;
+    }
+}
+void PID_Servo_init(PID_Servo *pid,float target_val,float Kp,float Ki,float Kd)
+{
+	pid->target_val=target_val;
+	pid->Kp = Kp;
+	pid->Ki = Ki;
+	pid->Kd = Kd;
+}
+
+
+
+
+float Get_Servo_Angle_Down(){
+//	float Angle = __HAL_TIM_GET_COMPARE(&htim12,TIM_CHANNEL_1);
+	    // 核心转换公式
+	    float Angle = ( (__HAL_TIM_GET_COMPARE(&htim12,TIM_CHANNEL_1) - 500) / 2000.0f ) * 270.0f;
+	    return Angle;
+
+}
+float Get_Servo_Angle_Up(){
+    // 核心转换公式
+//    float Angle =__HAL_TIM_GET_COMPARE(&htim12,TIM_CHANNEL_2);
+	 float Angle = ( (__HAL_TIM_GET_COMPARE(&htim12,TIM_CHANNEL_2) - 500) / 2000.0f ) * 270.0f;
+    return Angle;
+
+
+}
+void PID_Servo_realize(PID_Servo *pid, float CurrentAngle) {
+    // 1. 计算当前误差
+    pid->Error = pid->target_val - CurrentAngle;
+
+    // 2. 计算积分项 (带积分限幅，防止积分饱和)
+    pid->integral += pid->Error;
+    if (pid->integral > 1000) pid->integral = 1000;
+    if (pid->integral < -1000) pid->integral = -1000;
+
+    // 3. 计算微分项
+    float derivative = pid->Error - pid->LastError;
+
+    // 4. 计算总输出
+    pid->output_val = (pid->Kp * pid->Error) +
+                  (pid->Ki * pid->integral) +
+                  (pid->Kd * derivative);
+    if (pid->output_val > 2500) pid->output_val = 2500;
+    if (pid->output_val < -2500) pid->output_val = -2500;
+    // 5. 更新上次误差
+    pid->LastError = pid->Error;
+}

@@ -1,5 +1,5 @@
-#ifndef MYCODE_PID_H_
-#define MYCODE_PID_H_
+#ifndef PIDSPEED_H_
+#define PIDSPEED_H_
 #include "main.h"
 typedef struct
 {
@@ -27,4 +27,5 @@ float PosionPID_realize(PID *pid, float actual_val);
 void Set_motor_expect_speedL(PID *pid,float speed);
 void Set_motor_expect_speedR(PID *pid,float speed);
 
-#endif /* MYCODE_PID_H_ */
+/* MYCODE_PID_H_ */
+#endif

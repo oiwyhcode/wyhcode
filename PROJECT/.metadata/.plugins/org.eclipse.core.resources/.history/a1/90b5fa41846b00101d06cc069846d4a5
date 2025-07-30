@@ -1,0 +1,105 @@
+#include "servo.h"
+#include "math.h"
+
+// 定义PWM参数
+#define PWM_PERIOD   20000   // 20ms周期(72MHz/72=1MHz, 1计数=1us)
+#define MIN_PULSE    500     // 0.5ms脉冲宽度
+#define MAX_PULSE    2500    // 2.5ms脉冲宽度
+#define ANGLE_RANGE  270.0f  // 舵机角度范围
+
+// 云台参数
+#define CENTER_X     90.0f   // 水平中心角度
+#define CENTER_Y     90.0f   // 垂直中心角度
+#define CIRCLE_RADIUS 10.0f  // 圆形轨迹半径
+#define POINT_COUNT  500     // 圆形轨迹点数
+
+
+void Set_Servo_Angle(uint8_t servo_id, float angle) {
+    uint16_t pulse = MIN_PULSE + (uint16_t)((MAX_PULSE - MIN_PULSE) * angle / ANGLE_RANGE);
+
+    switch(servo_id) {
+        case 0:  // 水平舵机 (TIM3_CH1)
+            TIM12->CCR1 = pulse;
+            break;
+        case 1:  // 垂直舵机 (TIM3_CH2)
+            TIM12->CCR2 = pulse;
+            break;
+    }
+}
+void Draw_Circle(void) {
+    for(int i = 0; i < POINT_COUNT; i++) {
+        float theta = 2 * M_PI * i / POINT_COUNT;
+
+        // 计算圆上点的坐标
+        float x_angle = CENTER_X + CIRCLE_RADIUS * cos(theta);
+        float y_angle = CENTER_Y + CIRCLE_RADIUS * sin(theta);
+
+        // 限制角度范围
+        x_angle = (x_angle < 0) ? 0 : (x_angle > 270) ? 270 : x_angle;
+        y_angle = (y_angle < 0) ? 0 : (y_angle > 270) ? 270 : y_angle;
+
+        // 更新舵机位置
+        Set_Servo_Angle(0, x_angle);  // 水平
+        Set_Servo_Angle(1, y_angle);  // 垂直
+
+        // 控制移动速度 (约100ms/点)
+        HAL_Delay(10);
+    }
+}
+void PID_Servo_init(PID_Servo *pid,float target_val,float Kp,float Ki,float Kd)
+{
+	pid->target_val=target_val;
+	pid->Kp = Kp;
+	pid->Ki = Ki;
+	pid->Kd = Kd;
+}
+
+void Set_Servo_Angle_Down(uint16_t angle){
+	int pwm = (2000.0f / 270.0f) * angle + 500;
+	__HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_1,pwm);
+}
+
+void Set_Servo_Angle_Up(uint16_t angle){
+	int pwm = (2000.0f / 270.0f) * angle + 500;
+
+	__HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_2,pwm);
+}
+
+
+
+float Get_Servo_Angle_Down(){
+//	float Angle = __HAL_TIM_GET_COMPARE(&htim12,TIM_CHANNEL_1);
+	    // 核心转换公式
+	    float Angle = ( (__HAL_TIM_GET_COMPARE(&htim12,TIM_CHANNEL_1) - 500) / 2000.0f ) * 270.0f;
+	    return Angle;
+
+}
+float Get_Servo_Angle_Up(){
+    // 核心转换公式
+//    float Angle =__HAL_TIM_GET_COMPARE(&htim12,TIM_CHANNEL_2);
+	 float Angle = ( (__HAL_TIM_GET_COMPARE(&htim12,TIM_CHANNEL_2) - 500) / 2000.0f ) * 270.0f;
+    return Angle;
+
+
+}
+void PID_Servo_realize(PID_Servo *pid, float CurrentAngle) {
+    // 1. 计算当前误差
+    pid->Error = pid->target_val - CurrentAngle;
+
+    // 2. 计算积分项 (带积分限幅，防止积分饱和)
+    pid->integral += pid->Error;
+    if (pid->integral > 1000) pid->integral = 1000;
+    if (pid->integral < -1000) pid->integral = -1000;
+
+    // 3. 计算微分项
+    float derivative = pid->Error - pid->LastError;
+
+    // 4. 计算总输出
+    pid->output_val = (pid->Kp * pid->Error) +
+                  (pid->Ki * pid->integral) +
+                  (pid->Kd * derivative);
+    if (pid->output_val > 2500) pid->output_val = 2500;
+    if (pid->output_val < -2500) pid->output_val = -2500;
+    // 5. 更新上次误差
+    pid->LastError = pid->Error;
+}

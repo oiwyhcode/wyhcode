@@ -1,0 +1,55 @@
+#ifndef GLOBAL_H
+#define GLOBAL_H
+
+#define RXBUFFERSIZE 255     //最大的接受字节数
+#define TXBUFFERSIZE  255     //最大发送字节数
+
+
+
+// 矩形参数定义（可根据需要调整）
+#define RECT_CENTER_X     90.0f   // 矩形中心X坐标
+#define RECT_CENTER_Y     90.0f   // 矩形中心Y坐标
+#define RECT_WIDTH        70.0f   // 矩形宽度（水平方向角度范围）
+#define RECT_HEIGHT       40.0f   // 矩形高度（垂直方向角度范围）
+#define RECT_SPEED        10      // 每点延时（ms），控制绘制速度
+#define RECT_SEGMENTS     30      // 每条边的插值点数（越大越平滑）
+
+
+// 定义PWM参数
+#define PWM_PERIOD   20000   // 20ms周期(72MHz/72=1MHz, 1计数=1us)
+#define MIN_PULSE    500     // 0.5ms脉冲宽度
+#define MAX_PULSE    2500    // 2.5ms脉冲宽度
+#define ANGLE_RANGE  270.0f  // 舵机角度范围
+
+// 圆参数（可调整）
+#define CIRCLE_CENTER_X   90.0f   // 圆心X坐标(角度)
+#define CIRCLE_CENTER_Y   90.0f   // 圆心Y坐标(角度)
+#define CIRCLE_RADIUS     30.0f   // 圆半径(角度)
+#define CIRCLE_STEPS      72      // 分段数(越大越平滑，建议≥36)
+#define CIRCLE_DELAY      10      // 每步延时(ms)
+
+// 正弦函数参数
+#define SIN_AMPLITUDE  10.0f   // 振幅（垂直摆动角度）
+#define SIN_FREQUENCY   6.0f    // 频率（周期数）
+#define SIN_CENTER_X    90.0f   // 水平起始位置
+#define SIN_START_Y     90.0f   // 垂直中心位置
+#define SIN_HORIZONTAL_RANGE 90.0f  // 水平扫描范围
+#define SIN_POINT_COUNT  1500    // 轨迹点数
+#define SIN_SPEED        10    // 每点延时（ms）
+
+// 五角星参数
+#define STAR_CENTER_X    90.0f   // 五角星中心X坐标
+#define STAR_CENTER_Y    90.0f   // 五角星中心Y坐标
+#define STAR_OUTER_RADIUS 40.0f  // 外顶点到中心的距离
+#define STAR_INNER_RADIUS 15.0f  // 内顶点到中心的距离
+#define STAR_SPEED        20     // 每点延时（ms）
+#define STAR_SEGMENT_POINTS 20   // 每边插值点数
+
+// 三角形参数
+#define TRIANGLE_CENTER_X   90.0f   // 三角形中心X坐标
+#define TRIANGLE_CENTER_Y   90.0f   // 三角形中心Y坐标
+#define TRIANGLE_SIZE       20.0f   // 三角形大小（顶点到中心的距离）
+#define TRIANGLE_SPEED      20      // 每点延时（ms）
+#define TRIANGLE_SEGMENTS   50      // 每边插值点数
+
+#endif

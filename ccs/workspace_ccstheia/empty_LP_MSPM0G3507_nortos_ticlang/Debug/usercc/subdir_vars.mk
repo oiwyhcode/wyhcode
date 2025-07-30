@@ -7,26 +7,32 @@ SHELL = cmd.exe
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../usercc/PID_Speed.c \
+../usercc/Trace.c \
 ../usercc/delay.c 
 
 C_DEPS += \
 ./usercc/PID_Speed.d \
+./usercc/Trace.d \
 ./usercc/delay.d 
 
 OBJS += \
 ./usercc/PID_Speed.o \
+./usercc/Trace.o \
 ./usercc/delay.o 
 
 OBJS__QUOTED += \
 "usercc\PID_Speed.o" \
+"usercc\Trace.o" \
 "usercc\delay.o" 
 
 C_DEPS__QUOTED += \
 "usercc\PID_Speed.d" \
+"usercc\Trace.d" \
 "usercc\delay.d" 
 
 C_SRCS__QUOTED += \
 "../usercc/PID_Speed.c" \
+"../usercc/Trace.c" \
 "../usercc/delay.c" 
 
 

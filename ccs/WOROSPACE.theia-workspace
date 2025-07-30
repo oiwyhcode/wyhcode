@@ -4,7 +4,9 @@
       "path": "workspace_ccstheia/empty_LP_MSPM0G3507_nortos_ticlang"
     }
   ],
-  "settings": {},
+  "settings": {
+    "git.ignoreLimitWarning": true
+  },
   "launch": {
     "version": "0.2.0",
     "configurations": [

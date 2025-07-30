@@ -1,1 +1,26 @@
- 
+#ifndef __PID_SPEED_H__
+#define __PID_SPEED_H__
+#include "ti_msp_dl_config.h"
+
+
+typedef struct
+{
+	float target_val;   //目标值
+	float Error;          /*第 k 次偏差 */
+	float LastError;     /* Error[-1],第 k-1 次偏差 */
+	float PrevError;    /* Error[-2],第 k-2 次偏差 */
+	float Kp,Ki,Kd;     //比例、积分、微分系数
+	float integral;     //积分值
+	float output_val;   //输出值
+	float target_finally;
+}PID;
+
+extern int speednow1;
+extern int speednow2;
+float PosionPID_realize(PID *pid, float actual_val);
+void PID_param_init(PID *pid,float target_val,float Kp,float Ki,float Kd);
+void Set_motor_expect_speedL(PID *pid,float speed);
+void Set_motor_expect_speedR(PID *pid,float speed);
+void Set_motor_speedL(PID *pid,float speed);
+void Set_motor_speedR(PID *pid,float speed);
+ #endif // __PID_SPEED_H__

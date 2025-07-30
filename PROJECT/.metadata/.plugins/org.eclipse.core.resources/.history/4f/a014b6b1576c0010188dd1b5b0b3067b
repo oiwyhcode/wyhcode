@@ -1,0 +1,32 @@
+#ifndef USERHH_SERVO_H_
+#define USERHH_SERVO_H_
+#include "main.h"
+
+
+typedef struct
+{
+	float target_val;   //目标值
+	float Error;          /*第 k 次偏差 */
+	float LastError;     /* Error[-1],第 k-1 次偏差 */
+	float PrevError;    /* Error[-2],第 k-2 次偏差 */
+	float Kp,Ki,Kd;     //比例、积分、微分系数
+	float integral;     //积分值
+	float output_val;   //输出值
+}PID_Servo;
+
+extern float servo_angle,servo_pwm;
+extern TIM_HandleTypeDef htim12;
+void PID_Servo_init(PID_Servo *pid,float target_val,float Kp,float Ki,float Kd);
+void PID_Servo_realize(PID_Servo *pid, float CurrentAngle);
+float Get_Servo_Angle_Down();
+float Get_Servo_Angle_Up();
+
+void Set_Servo_Angle(uint8_t servo_id, float angle);
+void Draw_Circle(void);
+
+void Draw_Rectangle(void);
+void Draw_SineWave(void);
+void Draw_Star(void);
+void Draw_Triangle(void);
+void TestHorizontalLine(void);
+#endif /* USERHH_SERVO_H_ */

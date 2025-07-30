@@ -1,4 +1,3 @@
-../Core/UserCC/Trace_PID.c:8:9:Read_GPIO	1
 ../Core/UserCC/Trace_PID.c:15:6:Get_Sensor_Trace	2
 ../Core/UserCC/Trace_PID.c:30:6:PID_Trace_init	1
 ../Core/UserCC/Trace_PID.c:40:5:Trace_error	1
