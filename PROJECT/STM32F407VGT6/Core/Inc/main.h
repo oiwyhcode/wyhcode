@@ -57,14 +57,6 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define motorA_IN1_Pin GPIO_PIN_2
-#define motorA_IN1_GPIO_Port GPIOE
-#define motorA_IN2_Pin GPIO_PIN_3
-#define motorA_IN2_GPIO_Port GPIOE
-#define motorB_IN1_Pin GPIO_PIN_4
-#define motorB_IN1_GPIO_Port GPIOE
-#define motorB_IN2_Pin GPIO_PIN_5
-#define motorB_IN2_GPIO_Port GPIOE
 #define KEY1_Pin GPIO_PIN_0
 #define KEY1_GPIO_Port GPIOC
 #define KEY2_Pin GPIO_PIN_1
@@ -73,34 +65,6 @@ void Error_Handler(void);
 #define BUZZ_GPIO_Port GPIOC
 #define LED_Pin GPIO_PIN_3
 #define LED_GPIO_Port GPIOC
-#define MOTOR4_PWM_Pin GPIO_PIN_0
-#define MOTOR4_PWM_GPIO_Port GPIOA
-#define MOTOR3_PWM_Pin GPIO_PIN_1
-#define MOTOR3_PWM_GPIO_Port GPIOA
-#define MOTOR2_PWM_Pin GPIO_PIN_2
-#define MOTOR2_PWM_GPIO_Port GPIOA
-#define MOTOR1_PWM_Pin GPIO_PIN_3
-#define MOTOR1_PWM_GPIO_Port GPIOA
-#define ENCODERB_1_Pin GPIO_PIN_6
-#define ENCODERB_1_GPIO_Port GPIOA
-#define ENCODERB_2_Pin GPIO_PIN_7
-#define ENCODERB_2_GPIO_Port GPIOA
-#define OUT1_Pin GPIO_PIN_7
-#define OUT1_GPIO_Port GPIOE
-#define OUT2_Pin GPIO_PIN_8
-#define OUT2_GPIO_Port GPIOE
-#define OUT3_Pin GPIO_PIN_10
-#define OUT3_GPIO_Port GPIOE
-#define OUT4_Pin GPIO_PIN_11
-#define OUT4_GPIO_Port GPIOE
-#define OUT5_Pin GPIO_PIN_12
-#define OUT5_GPIO_Port GPIOE
-#define OUT6_Pin GPIO_PIN_13
-#define OUT6_GPIO_Port GPIOE
-#define OUT7_Pin GPIO_PIN_14
-#define OUT7_GPIO_Port GPIOE
-#define OUT8_Pin GPIO_PIN_15
-#define OUT8_GPIO_Port GPIOE
 #define KEY4_Pin GPIO_PIN_12
 #define KEY4_GPIO_Port GPIOB
 #define KEY3_Pin GPIO_PIN_13
@@ -109,14 +73,6 @@ void Error_Handler(void);
 #define SERVO_PWM2_GPIO_Port GPIOB
 #define SERVO_PWM1_Pin GPIO_PIN_15
 #define SERVO_PWM1_GPIO_Port GPIOB
-#define ENCODERA_1_Pin GPIO_PIN_12
-#define ENCODERA_1_GPIO_Port GPIOD
-#define ENCODERA_2_Pin GPIO_PIN_13
-#define ENCODERA_2_GPIO_Port GPIOD
-#define HS100_TX_Pin GPIO_PIN_10
-#define HS100_TX_GPIO_Port GPIOC
-#define Hs100_RX_Pin GPIO_PIN_11
-#define Hs100_RX_GPIO_Port GPIOC
 #define HC06_RX_Pin GPIO_PIN_12
 #define HC06_RX_GPIO_Port GPIOC
 #define HC06_TX_Pin GPIO_PIN_2
@@ -129,14 +85,6 @@ void Error_Handler(void);
 #define OLED_SCL_GPIO_Port GPIOB
 #define OLED_SDA_Pin GPIO_PIN_7
 #define OLED_SDA_GPIO_Port GPIOB
-#define motorD_IN2_Pin GPIO_PIN_8
-#define motorD_IN2_GPIO_Port GPIOB
-#define motorD_IN1_Pin GPIO_PIN_9
-#define motorD_IN1_GPIO_Port GPIOB
-#define motorC_IN2_Pin GPIO_PIN_0
-#define motorC_IN2_GPIO_Port GPIOE
-#define motorC_IN1_Pin GPIO_PIN_1
-#define motorC_IN1_GPIO_Port GPIOE
 
 /* USER CODE BEGIN Private defines */
 

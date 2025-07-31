@@ -1,4 +1,4 @@
-16:55:42 **** Incremental Build of configuration Debug for project Myproject ****
+23:06:13 **** 构建 of configuration Debug for project Myproject ****
 make -j12 all 
 arm-none-eabi-size  Myproject.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  Myproject.elf
 已结束构建： default.size.stdout
  
 
-16:55:42 Build Finished. 0 errors, 0 warnings. (took 678ms)
+23:06:15 Build Finished. 0 errors, 0 warnings. (took 1s.218ms)
 

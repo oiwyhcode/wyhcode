@@ -3,6 +3,10 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="RxBuffer4"/>
+		<item value="RxBuffer3"/>
+		<item value="RxBuffer2"/>
+		<item value="huart6"/>
 		<item value="&amp;huart1"/>
 		<item value="hal_uart_transm"/>
 		<item value="huart1"/>
@@ -13,6 +17,10 @@
 		<item value="uart1"/>
 	</list>
 	<list key="replacehistory">
+		<item value="RxBuffer3"/>
+		<item value="RxBuffer2"/>
+		<item value="RxBuffer4"/>
+		<item value="huart1"/>
 		<item value="&amp;huart6"/>
 		<item value="huart4"/>
 		<item value="&amp;htim4"/>

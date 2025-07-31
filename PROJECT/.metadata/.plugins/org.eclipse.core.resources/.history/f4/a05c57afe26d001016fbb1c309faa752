@@ -1,0 +1,423 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2025 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "dma.h"
+#include "i2c.h"
+#include "tim.h"
+#include "usart.h"
+#include "gpio.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+#include "stdio.h"
+#include "string.h"
+#include "define.h"
+#include "jy62.h"
+#include "oled.h"
+#include "Angle_PID.h"
+#include "servo.h"
+#include "math.h"
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+
+
+
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+
+/* USER CODE BEGIN PV */
+
+
+float Angle_PID_Kp=.6;
+float Angle_PID_Ki=0.01;
+float Angle_PID_Kd=0.1;
+float Servo_PID_Kp=0.02;
+float Servo_PID_Ki=0;
+float Servo_PID_Kd=0.02;
+
+
+
+    PID_Angle Angle_PID;
+    PID_Servo Servo_PID_Down;
+    PID_Servo Servo_PID_Up;
+char message[255];
+char RxBuffer[RXBUFFERSIZE];   //接受数据
+char RxBuffer3[RXBUFFERSIZE];   //接受数据
+char RxBuffer2[RXBUFFERSIZE];   //接受数据
+char TxBuffer[TXBUFFERSIZE];   //发送数据
+float RollX = 0;        //        滚转角
+float PitchY = 0;        //        仰俯角
+float YawZ = 0;        //       偏航角
+uint8_t JY62_z_Zero[] = {0xFF, 0xAA, 0x52};    //数组来存储发送的z轴角度归零的数据
+
+
+
+float servo_angle,servo_pwm,now_angle_down,now_angle_up,Angle_x=320,Angle_y=240;
+
+
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+/* USER CODE BEGIN PFP */
+
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+
+
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+
+  /* USER CODE BEGIN 1 */
+
+Angle_PID.target_val=0;
+Servo_PID_Down.target_val=320;
+Servo_PID_Up.target_val=240;
+
+  /* USER CODE END 1 */
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_DMA_Init();
+  MX_USART2_UART_Init();
+  MX_I2C1_Init();
+  MX_USART3_UART_Init();
+  MX_TIM12_Init();
+  MX_TIM7_Init();
+  MX_UART5_Init();
+  MX_TIM2_Init();
+  MX_USART6_UART_Init();
+  MX_TIM14_Init();
+  MX_USART1_UART_Init();
+  /* USER CODE BEGIN 2 */
+  /*USER Init BEGIN*/
+  HAL_Delay(20);
+  OLED_Init();
+
+
+  PID_Angle_init(&Angle_PID, Angle_PID.target_val, Angle_PID_Kp, Angle_PID_Ki, Angle_PID_Kd);
+  PID_Servo_init(&Servo_PID_Down, Servo_PID_Down.target_val, Servo_PID_Kp, Servo_PID_Ki, Servo_PID_Kd);
+  PID_Servo_init(&Servo_PID_Up, Servo_PID_Up.target_val, Servo_PID_Kp, Servo_PID_Ki, Servo_PID_Kd);
+  /*USER Init END*/
+  HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t *)RxBuffer,sizeof(RxBuffer));   //开启接受不定长
+  HAL_UARTEx_ReceiveToIdle_DMA(&huart1, (uint8_t *)RxBuffer3,sizeof(RxBuffer3));   //开启接受不定长
+  HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t *)RxBuffer2,sizeof(RxBuffer2));   //开启接受不定长
+  __HAL_DMA_DISABLE_IT(huart2.hdmarx, DMA_IT_HT);          //关闭接受半中断
+  __HAL_DMA_DISABLE_IT(huart3.hdmarx, DMA_IT_HT);          //关闭接受半中断
+  __HAL_DMA_DISABLE_IT(huart1.hdmarx, DMA_IT_HT);          //关闭接受半中断
+
+  HAL_UART_Transmit_DMA(&huart2, JY62_z_Zero, sizeof(JY62_z_Zero));
+
+  HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_2);
+
+  HAL_TIM_Base_Start_IT(&htim7);
+  HAL_TIM_Base_Start_IT(&htim14);
+
+
+//  __HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_2,1010);
+//  __HAL_TIM_SetCompare(&htim12,TIM_CHANNEL_1,1000);
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+//	PID_Servo_realize(&Servo_PID_Down,Angle_x);
+//	PID_Servo_realize(&Servo_PID_Up,Angle_y);
+//	Set_Servo_Angle_Down(Get_Servo_Angle_Down()+Servo_PID_Down.output_val);
+//	Set_Servo_Angle_Up(Get_Servo_Angle_Up()+Servo_PID_Up.output_val);
+  Set_Servo_Angle(0, 90.0f);
+  Set_Servo_Angle(1, 90.0f);
+  HAL_Delay(1000);
+
+  while (1)
+  {
+
+  	OLED_NewFrame();
+	 sprintf(message,"x:%.2f",Angle_x);
+	 OLED_PrintString(1, 16, message, &font16x16, 0);
+  sprintf(message,"y:%.2f",Angle_y);
+	 OLED_PrintString(1, 32, message, &font16x16, 0);
+	 sprintf(message,"speedr:%ld",__HAL_TIM_GetCompare(&htim12,TIM_CHANNEL_1));
+	 OLED_PrintString(1, 48, message, &font16x16, 0);
+	 OLED_ShowFrame();
+
+
+
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
+}
+
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+  /** Configure the main internal regulator output voltage
+  */
+  __HAL_RCC_PWR_CLK_ENABLE();
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+  RCC_OscInitStruct.PLL.PLLM = 8;
+  RCC_OscInitStruct.PLL.PLLN = 168;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+  RCC_OscInitStruct.PLL.PLLQ = 4;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/* USER CODE BEGIN 4 */
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){         //GPIO中断
+
+}
+
+
+
+
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){ //串口接收中断
+	if(huart==&huart1){
+		memset(message, 0, sizeof(message));  // 整个数组
+		 if (Size < sizeof(RxBuffer3)) {
+		            RxBuffer3[Size] = '\0';  // 添加字符串结束符
+		        } else {
+		            RxBuffer3[sizeof(RxBuffer3) - 1] = '\0';  // 防止越界
+		        }
+//左边电机PID在线调参
+
+		 if  (sscanf(RxBuffer3, "anglex %f,angley %f", &Angle_x,&Angle_y)== 2){
+
+		    	PID_Servo_realize(&Servo_PID_Down,Angle_x);
+		    	PID_Servo_realize(&Servo_PID_Up,Angle_y);
+		    	Set_Servo_Angle(0,Get_Servo_Angle_Down()+Servo_PID_Down.output_val);
+//		    	Set_Servo_Angle(1,Get_Servo_Angle_Up()+Servo_PID_Up.output_val);
+		    	Set_Servo_Angle(1,155);
+         }
+
+
+
+
+
+
+
+
+           //sprintf(message,"RECEIVE:%s\n",RxBuffer3);
+           //HAL_UART_Transmit_DMA(&huart1, (uint8_t*)message, strlen(message));
+           HAL_UARTEx_ReceiveToIdle_DMA(&huart1, (uint8_t *)RxBuffer3,sizeof(RxBuffer3));   //开启接受不定长
+	}
+
+
+	else if(huart==&huart2){  //接收JY62 数据中断
+		if(RxBuffer[22]==0x55){
+			if(RxBuffer[23]==0x53){
+				RollX = (float)(((short)(RxBuffer[25]<<8)|RxBuffer[24])/32768.0*180);//处理数据，依据官方所给文档
+				PitchY = (float)((short)((RxBuffer[27]<<8)|RxBuffer[26])/32768.0*180);
+				YawZ = (float)((short)((RxBuffer[29]<<8)|RxBuffer[28])/32768.0*180);
+			}
+		}
+
+		//sprintf(TxBuffer,"%.2f,%.2f,%.2f,%d,%d,%.2f,%.2f,%.2f,%.2f\n",
+		//		RollX,PitchY,YawZ,speednow,speednow2,
+		//		PIDL.target_val,PIDL.output_val,PIDR.target_val,PIDR.output_val);
+		//sprintf(TxBuffer,"%.2f,%.2f,%.2f,%.2f\n",Servo_PID_Up.target_val,Angle_y,Servo_PID_Up.output_val,Servo_PID_Up.Error);
+     //	HAL_UART_Transmit_DMA(&huart1, (uint8_t *)TxBuffer, strlen(TxBuffer));   //将数据通过串口一发送出去
+		HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t *)RxBuffer,sizeof(RxBuffer));   //开启接受不定长
+	}
+
+
+	else if(huart==&huart3){
+		memset(message, 0, sizeof(message));  // 整个数组
+		 if (Size < sizeof(RxBuffer2)) {
+		            RxBuffer2[Size] = '\0';  // 添加字符串结束符
+		        } else {
+		            RxBuffer2[sizeof(RxBuffer2) - 1] = '\0';  // 防止越界
+		        }
+
+//		HAL_UART_Transmit_DMA(&huart3, (uint8_t *)RxBuffer2, strlen(RxBuffer2));
+		HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t *)RxBuffer2,sizeof(RxBuffer2));   //开启接受不定长
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {//处理数据发送完成后的操作
+	if(huart==&huart1){
+
+
+	}
+
+	else if(huart == &huart2) {
+
+	     memset(TxBuffer, 0, sizeof(TxBuffer));
+
+
+  }
+}
+
+
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+    if(htim==&htim14){
+
+
+    }
+    else if(htim==&htim7){
+
+
+//
+//        PID_Angle_realize(&Angle_PID,YawZ);
+
+//        Set_motor_speedL(&PIDL,PIDL.target_val );
+//        Set_motor_speedR(&PIDR,PIDR.target_val );
+    //    -Trace_PID.output_val-Angle_PID.output_val
+	//	+Trace_PID.output_val+Angle_PID.output_val
+
+
+
+//偏左正输出负  偏右负
+
+
+	}
+
+
+
+
+
+
+
+}
+
+
+
+/* USER CODE END 4 */
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+  __disable_irq();
+  while (1)
+  {
+  }
+  /* USER CODE END Error_Handler_Debug */
+}
+
+#ifdef  USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */

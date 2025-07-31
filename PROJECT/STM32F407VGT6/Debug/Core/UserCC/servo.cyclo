@@ -1,10 +1,5 @@
-../Core/UserCC/servo.c:6:6:Draw_Triangle	8
-../Core/UserCC/servo.c:46:6:Draw_Star	9
-../Core/UserCC/servo.c:95:6:Draw_SineWave	6
-../Core/UserCC/servo.c:120:6:Draw_Circle	6
-../Core/UserCC/servo.c:142:6:Draw_Rectangle	7
-../Core/UserCC/servo.c:189:6:Set_Servo_Angle	3
-../Core/UserCC/servo.c:201:6:PID_Servo_init	1
-../Core/UserCC/servo.c:212:7:Get_Servo_Angle_Down	1
-../Core/UserCC/servo.c:219:7:Get_Servo_Angle_Up	1
-../Core/UserCC/servo.c:227:6:PID_Servo_realize	5
+../Core/UserCC/servo.c:7:6:Set_Servo_Angle	5
+../Core/UserCC/servo.c:23:6:PID_Servo_init	1
+../Core/UserCC/servo.c:34:7:Get_Servo_Angle_Down	1
+../Core/UserCC/servo.c:41:7:Get_Servo_Angle_Up	1
+../Core/UserCC/servo.c:49:6:PID_Servo_realize	5

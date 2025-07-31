@@ -21,13 +21,7 @@ void PID_Servo_init(PID_Servo *pid,float target_val,float Kp,float Ki,float Kd);
 void PID_Servo_realize(PID_Servo *pid, float CurrentAngle);
 float Get_Servo_Angle_Down();
 float Get_Servo_Angle_Up();
+void Set_Servo_Angle(uint8_t servo_id, float angle,float pwm);
 
-void Set_Servo_Angle(uint8_t servo_id, float angle);
-void Draw_Circle(void);
 
-void Draw_Rectangle(void);
-void Draw_SineWave(void);
-void Draw_Star(void);
-void Draw_Triangle(void);
-void TestHorizontalLine(void);
 #endif /* USERHH_SERVO_H_ */

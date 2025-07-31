@@ -12,8 +12,6 @@
 "./Core/Startup/startup_stm32f407vgtx.o"
 "./Core/UserCC/Angle_PID.o"
 "./Core/UserCC/HC_06.o"
-"./Core/UserCC/Trace_PID.o"
-"./Core/UserCC/US-100.o"
 "./Core/UserCC/define.o"
 "./Core/UserCC/font.o"
 "./Core/UserCC/jy62.o"

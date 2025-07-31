@@ -50,7 +50,8 @@ Delay_ms(2000);
  PID_param_init(&PIDR,PIDR.target_val,PIDR_Kp,PIDR_Ki,PIDR_Kd);
     while (1)
     {get_now_circle();
-    CheckStartKey();
+
+    CheckStartKey();////
     if(now_circle>=set_circle   ){
  motor_stop();
     }

@@ -7,8 +7,6 @@
 C_SRCS += \
 ../Core/UserCC/Angle_PID.c \
 ../Core/UserCC/HC_06.c \
-../Core/UserCC/Trace_PID.c \
-../Core/UserCC/US-100.c \
 ../Core/UserCC/define.c \
 ../Core/UserCC/font.c \
 ../Core/UserCC/jy62.c \
@@ -19,8 +17,6 @@ C_SRCS += \
 OBJS += \
 ./Core/UserCC/Angle_PID.o \
 ./Core/UserCC/HC_06.o \
-./Core/UserCC/Trace_PID.o \
-./Core/UserCC/US-100.o \
 ./Core/UserCC/define.o \
 ./Core/UserCC/font.o \
 ./Core/UserCC/jy62.o \
@@ -31,8 +27,6 @@ OBJS += \
 C_DEPS += \
 ./Core/UserCC/Angle_PID.d \
 ./Core/UserCC/HC_06.d \
-./Core/UserCC/Trace_PID.d \
-./Core/UserCC/US-100.d \
 ./Core/UserCC/define.d \
 ./Core/UserCC/font.d \
 ./Core/UserCC/jy62.d \
@@ -48,7 +42,7 @@ Core/UserCC/%.o Core/UserCC/%.su Core/UserCC/%.cyclo: ../Core/UserCC/%.c Core/Us
 clean: clean-Core-2f-UserCC
 
 clean-Core-2f-UserCC:
-	-$(RM) ./Core/UserCC/Angle_PID.cyclo ./Core/UserCC/Angle_PID.d ./Core/UserCC/Angle_PID.o ./Core/UserCC/Angle_PID.su ./Core/UserCC/HC_06.cyclo ./Core/UserCC/HC_06.d ./Core/UserCC/HC_06.o ./Core/UserCC/HC_06.su ./Core/UserCC/Trace_PID.cyclo ./Core/UserCC/Trace_PID.d ./Core/UserCC/Trace_PID.o ./Core/UserCC/Trace_PID.su ./Core/UserCC/US-100.cyclo ./Core/UserCC/US-100.d ./Core/UserCC/US-100.o ./Core/UserCC/US-100.su ./Core/UserCC/define.cyclo ./Core/UserCC/define.d ./Core/UserCC/define.o ./Core/UserCC/define.su ./Core/UserCC/font.cyclo ./Core/UserCC/font.d ./Core/UserCC/font.o ./Core/UserCC/font.su ./Core/UserCC/jy62.cyclo ./Core/UserCC/jy62.d ./Core/UserCC/jy62.o ./Core/UserCC/jy62.su ./Core/UserCC/oled.cyclo ./Core/UserCC/oled.d ./Core/UserCC/oled.o ./Core/UserCC/oled.su ./Core/UserCC/pidspeed.cyclo ./Core/UserCC/pidspeed.d ./Core/UserCC/pidspeed.o ./Core/UserCC/pidspeed.su ./Core/UserCC/servo.cyclo ./Core/UserCC/servo.d ./Core/UserCC/servo.o ./Core/UserCC/servo.su
+	-$(RM) ./Core/UserCC/Angle_PID.cyclo ./Core/UserCC/Angle_PID.d ./Core/UserCC/Angle_PID.o ./Core/UserCC/Angle_PID.su ./Core/UserCC/HC_06.cyclo ./Core/UserCC/HC_06.d ./Core/UserCC/HC_06.o ./Core/UserCC/HC_06.su ./Core/UserCC/define.cyclo ./Core/UserCC/define.d ./Core/UserCC/define.o ./Core/UserCC/define.su ./Core/UserCC/font.cyclo ./Core/UserCC/font.d ./Core/UserCC/font.o ./Core/UserCC/font.su ./Core/UserCC/jy62.cyclo ./Core/UserCC/jy62.d ./Core/UserCC/jy62.o ./Core/UserCC/jy62.su ./Core/UserCC/oled.cyclo ./Core/UserCC/oled.d ./Core/UserCC/oled.o ./Core/UserCC/oled.su ./Core/UserCC/pidspeed.cyclo ./Core/UserCC/pidspeed.d ./Core/UserCC/pidspeed.o ./Core/UserCC/pidspeed.su ./Core/UserCC/servo.cyclo ./Core/UserCC/servo.d ./Core/UserCC/servo.o ./Core/UserCC/servo.su
 
 .PHONY: clean-Core-2f-UserCC
 
